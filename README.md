@@ -2,7 +2,7 @@
 proyecto integrador final
 pagina web de venta de e-books para el publico general de obras en español
 
-<h2>Integrantes: <h2>
+Integrantes: # This is an <h2> tag
 *Guillermo Laborda, economista, actualmente colaborando en medios gráficos y sitios de internet.
 *Carlos Rojas 30 años, Bostero. SIn experiencia previa en el mundo de la programación pero con muchas ganas.
 *Nicolas Portesio, tecnico en fibra optica en empresa de telecomunicaciones, que brinda servicios de internet y televisión
