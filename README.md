@@ -14,3 +14,6 @@ https://pre.tematika.com/
 https://www.yenny-elateneo.com/
 https://www.bananalibros.com.ar/
 https://www.lureads.com/
+
+pagina Trello
+https://trello.com/b/iqLEz4Te/ebooks
