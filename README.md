@@ -1,5 +1,5 @@
 <h1> # grupo_-6_nombre <h1>
-<h2>proyecto integrador final <h2>
+proyecto integrador final
 pagina web de venta de e-books para el publico general de obras en español
 
 <h2>Integrantes: <h2>
