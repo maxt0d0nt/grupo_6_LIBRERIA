@@ -1,4 +1,4 @@
-<h1> # grupo_-6_nombre <h1><br>
+<h1> # grupo_-6_nombre <h1>
 proyecto integrador final
 pagina web de venta de e-books para el publico general de obras en español
 
