@@ -1,7 +1,7 @@
 <h1> # Grupo_6_Libreria <h1>
-<h1>proyecto integrador final
+  <h2>proyecto integrador final</h2>
 
-<h3>Pagina web de venta de e-books para el publico general de obras en español
+Pagina web de venta de e-books para el publico general de obras en español
 
   <h3> Integrantes: </h3>
   
