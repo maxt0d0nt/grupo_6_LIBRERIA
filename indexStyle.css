@@ -1,0 +1,259 @@
+@import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+:root {
+    --first-color: #eb3349;
+    --last-color: #f45c43;
+    --background-menu: linear-gradient(to bottom, var(--first-color), var(--last-color));
+    --background-menu-mobile: radial-gradient(circle, #243b55, #141e30);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background: var(--background-menu);
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+    nav .icon{
+        font-size: 35px;
+        font-weight: 800;
+        color: white;
+        cursor: pointer;
+    }
+    nav ol {
+        display: flex;
+        list-style: none;
+        margin: auto 0;
+    }
+        nav ol li {
+            margin: 0 2px;
+        }
+        nav ol li a{
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+        }
+        nav ol li:hover a{
+            background: white;
+            color: lightsalmon;
+        }
+    nav .search_box{
+        display: flex;
+        margin: auto 0;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    nav .search_box input {
+        border: none;
+        outline: none;
+        background: white;
+        height: 100%;
+        padding: 0 10px;
+        font-size: 20px;
+        width: 350px;
+    }
+    nav .search_box span {
+        color: darkgrey;
+        font-size: 20px;
+        background: white;
+        height: 100%;
+        padding: 8px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+    }
+    nav .search_box span::after{
+        height: 100%;
+        width: 0%;
+        content: '';
+        background: darkcyan;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        transition: 0.3s;
+    }
+    nav .search_box span:hover::after{
+        width: 100%;
+        color: white;
+    }
+
+    nav .bar{
+        position: relative;
+        margin: auto;
+        display: none;
+    }
+
+        nav .bar span{
+            position: absolute;
+            color: white;
+            font-size: 35px;
+        }
+        input[type="checkbox"]{
+            -webkit-appearance: none;
+            display: none;
+        }
+
+        @media screen and (max-width: 1250px) {
+            nav {
+                display: block;
+                padding: 0;
+            }
+            nav .icon{
+                display: inline-block;
+                padding: 15px 30px;
+            }
+            nav .search_box{
+                width: 100%;
+                display: inline-flex;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            nav .search_box input{
+                width: 90%;
+            }
+            nav ol {
+                display: flex;
+                flex-direction: column;
+                background: var(--background-menu-mobile);
+                height: 0;
+                visibility: hidden;
+                transition: 0.3s;
+
+            }
+            nav ol li{
+                text-align: center;
+                transition: 0.3s;
+            }
+            nav ol li a{
+                color: white;
+                font-size: 28px;
+                padding: 25px;
+                display: block;
+            }
+            /*SE PUEDE OBVIA*/
+            nav ol li:nth-child(1){transform: translateX(-350px);}
+            nav ol li:nth-child(2){transform: translateX(-400px);}
+            nav ol li:nth-child(3){transform: translateX(-450px);}
+            nav ol li:nth-child(4){transform: translateX(-500px);}
+            nav ol li:nth-child(5){transform: translateX(-550px);}
+            /*SE PUEDE OBVIA ---------*/
+            nav .bar {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 80px;
+                cursor: pointer;
+            }
+            nav .bar #times{
+                display: none;
+            }
+            #check:checked ~ nav .bar #times{
+                display: block;
+            }
+            #check:checked ~ nav .bar #bars{
+                display: none;
+            }
+            #check:checked ~ nav ol{
+                visibility: visible;
+                height: 465px;
+            }
+            #check:checked ~ nav ol li:nth-child(1),
+            #check:checked ~ nav ol li:nth-child(2),
+            #check:checked ~ nav ol li:nth-child(3),
+            #check:checked ~ nav ol li:nth-child(4),
+            #check:checked ~ nav ol li:nth-child(5){transform: translateX(0); opacity: 1}
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.menu{*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    background-color: red;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+/*    .menu__logo{*/
+/*        display: flex;*/
+/*        flex-grow: 1;*/
+/*    }*/
+/*        .menu__logo i{*/
+/*            font-size: 40px;*/
+/*            color: white;*/
+/*            padding: 10px;*/
+/*        }*/
+
+/*    .menu nav {*/
+/*        display: flex;*/
+/*        flex-grow: 2;*/
+/*        flex-direction: row;*/
+/*        flex-wrap: wrap;*/
+/*    }*/
+/*        .menu nav a{*/
+/*            padding: 10px;*/
+/*            align-items: center;*/
+/*            justify-content: center;*/
+/*            font-family: "Dubai Light";*/
+/*            font-size: 20px;*/
+/*        }*/
+
+/*    .menu__search{*/
+/*        display: flex;*/
+/*        justify-content: center;*/
+/*        align-items: center;*/
+/*    }*/
+/*        .menu__search input {*/
+/*            margin: 18px*/
+/*        }*/
+
+/*    .menu__avatar {*/
+/*        display: flex;*/
+/*        flex-direction: row;*/
+/*        justify-content: center;*/
+/*        align-items: center;*/
+/*    }*/
+/*    .menu__avatar i {*/
+/*        font-size: 30px;*/
+/*    }*/
+/*.bestseller {background-color: aqua}*/
+/*.lastBook { background-color: aquamarine}*/
+/*.offers {background-color: cadetblue}*/
+/*.categories { background-color: darkgreen}*/
+/*footer { background-color: coral}*/
+
