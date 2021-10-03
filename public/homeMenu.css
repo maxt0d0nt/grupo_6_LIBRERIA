@@ -10,6 +10,9 @@
     flex-grow: 1;
     flex-wrap: wrap;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav {
@@ -19,7 +22,7 @@ nav {
     position: relative;
     justify-content: space-between;
     text-align: center;
-    padding: 15px 30px;
+    padding: 15px 15px;
     font-family: 'Ubuntu', sans-serif;
 }
 nav .menu__icon{
@@ -98,6 +101,7 @@ nav .menu__avatar{
     padding: 11px;
     display: flex;
     align-items: center;
+    margin-left: 15px
 }
 nav .menu__avatar p{
     font-size: 9px;
@@ -131,13 +135,17 @@ input[type="checkbox"]{
         padding: 15px 30px;
     }
     nav .menu__search_box{
-        width: 100%;
+        width: 90%;
         display: inline-flex;
         justify-content: center;
         margin-bottom: 15px;
+        margin-top: 15px;
     }
     nav .menu__search_box input{
         width: 90%;
+    }
+    nav .menu__avatar{
+        margin-left:0px;
     }
     nav ol {
         display: flex;
@@ -146,7 +154,6 @@ input[type="checkbox"]{
         height: 0;
         visibility: hidden;
         transition: 0.3s;
-
     }
     nav ol li{
         text-align: center;
@@ -159,11 +166,12 @@ input[type="checkbox"]{
         display: block;
     }
     /*SE PUEDE OBVIA*/
-    nav ol li:nth-child(1){transform: translateX(-350px);}
-    nav ol li:nth-child(2){transform: translateX(-400px);}
-    nav ol li:nth-child(3){transform: translateX(-450px);}
-    nav ol li:nth-child(4){transform: translateX(-500px);}
-    nav ol li:nth-child(5){transform: translateX(-550px);}
+
+    nav ol li:nth-child(1){transform: translateX(-600px);}
+    nav ol li:nth-child(2){transform: translateX(-610px);}
+    nav ol li:nth-child(3){transform: translateX(-620px);}
+    nav ol li:nth-child(4){transform: translateX(-630px);}
+    nav ol li:nth-child(5){transform: translateX(-640px);}
     /*SE PUEDE OBVIA ---------*/
     nav .menu__bar {
         display: block;

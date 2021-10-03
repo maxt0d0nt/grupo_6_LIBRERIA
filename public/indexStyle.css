@@ -1,5 +1,6 @@
 @import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "homeMenu.css";
+@import "rootStyles.css";
 :root {
     --first-color: #eb3349;
     --last-color: #f45c43;
@@ -155,4 +156,63 @@ SLIDER
         max-width: calc(100% - 140px);
         margin: 0 auto;
     }
+}
+
+/*BEST SELLER */
+.card-list {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin: 0 4%;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.best-seller__arrow {
+    height: 50px;
+    width: 50px;
+    align-self: center;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.best-seller__arrow--left {background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;}
+.best-seller__arrow--right {background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;}
+
+
+.best-seller__books li {
+    background: #938a80;
+    height: 95%;
+    margin: 8px;
+    min-width: 225px;
+}
+
+.best-seller__books {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 300px;
+    justify-content: space-evenly;
+}
+
+.best-seller__title {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 11px;
+}
+
+.best-seller__carousel {
+    display: flex;
+    flex-direction: row;
+}
+
+.promotion--bank {
+    display: flex;
+    background: #938a80;
+
+}
+img.promotion__img {
+    height: 130px;
 }
