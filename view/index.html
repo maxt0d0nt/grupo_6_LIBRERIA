@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/indexStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <input type="checkbox" id="check">
+            <nav>
+                <div class="menu__icon">Re@dme</div>
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/productDetail">Mis Compras</a></li>
+                    <li><a href="/productCart">Productos</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                </ol>
+                <div class="search menu__search_box">
+                    <input type="search" placeholder="Search here">
+                    <span class="fa fa-search"></span>
+                    <i class="fas fa-user-circle menu__avatar">
+                        <p>User</p>
+                    </i>
+                </div>
+                <label for="check" class="menu__bar">
+                    <span class="fa fa-bars" id="menu__bars"></span>
+                    <span class="fa fa-times" id="menu__times"></span>
+                </label>
+            </nav>
+        </div>
+        <div id="slider">
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            <input type="radio" name="slider" id="slide4">
+            <div id="slides">
+                <div id="overflow">
+                    <div class="inner">
+                        <div class="slide slide_1">
+                            <div class="slide-content">
+                                <h2>Slide 1</h2>
+                                <p>Content for Slide 1</p>
+                            </div>
+                        </div>
+                        <div class="slide slide_2">
+                            <div class="slide-content">
+                                <h2>Slide 2</h2>
+                                <p>Content for Slide 2</p>
+                            </div>
+                        </div>
+                        <div class="slide slide_3">
+                            <div class="slide-content">
+                                <h2>Slide 3</h2>
+                                <p>Content for Slide 3</p>
+                            </div>
+                        </div>
+                        <div class="slide slide_4">
+                            <div class="slide-content">
+                                <h2>Slide 4</h2>
+                                <p>Content for Slide 4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </div>
+            <div id="bullets">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>

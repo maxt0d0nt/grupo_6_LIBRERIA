@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
