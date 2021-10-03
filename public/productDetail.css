@@ -1,0 +1,3 @@
+@import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+@import "homeMenu.css";
+@import "rootStyles.css";

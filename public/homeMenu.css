@@ -1,0 +1,193 @@
+:root {
+    --first-color: #eb3349;
+    --last-color: #f45c43;
+    --background-menu: linear-gradient(to bottom, var(--first-color), var(--last-color));
+    --background-menu-mobile: radial-gradient(circle, #243b55, #141e30);
+}
+
+.menu{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background: var(--background-menu);
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+nav .menu__icon{
+    font-size: 35px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
+nav ol {
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+}
+nav ol li {
+    margin: 0 2px;
+}
+nav ol li a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+}
+nav ol li:hover a{
+    background: white;
+    color: lightsalmon;
+}
+nav .menu__search_box{
+    display: flex;
+    margin: auto 0;
+    height: 35px;
+    line-height: 35px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+nav .menu__search_box input {
+    border: none;
+    outline: none;
+    background: white;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 350px;
+}
+nav .menu__search_box span {
+    color: darkgrey;
+    font-size: 20px;
+    background: white;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+nav .menu__search_box span::after{
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: darkcyan;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+nav .menu__search_box span:hover::after{
+    width: 100%;
+    color: white;
+}
+
+nav .menu__avatar{
+    font-size: 34px;
+    color: white;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+}
+nav .menu__avatar p{
+    font-size: 9px;
+    padding: 8px;
+}
+
+nav .menu__bar{
+    position: relative;
+    margin: auto;
+    display: none;
+
+}
+
+nav .menu__bar span{
+    position: absolute;
+    color: white;
+    font-size: 35px;
+}
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    display: none;
+}
+
+@media screen and (max-width: 1250px) {
+    nav {
+        display: block;
+        padding: 0;
+    }
+    .menu__icon{
+        display: inline-block;
+        padding: 15px 30px;
+    }
+    nav .menu__search_box{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    nav .menu__search_box input{
+        width: 90%;
+    }
+    nav ol {
+        display: flex;
+        flex-direction: column;
+        background: var(--background-menu-mobile);
+        height: 0;
+        visibility: hidden;
+        transition: 0.3s;
+
+    }
+    nav ol li{
+        text-align: center;
+        transition: 0.3s;
+    }
+    nav ol li a{
+        color: white;
+        font-size: 28px;
+        padding: 25px;
+        display: block;
+    }
+    /*SE PUEDE OBVIA*/
+    nav ol li:nth-child(1){transform: translateX(-350px);}
+    nav ol li:nth-child(2){transform: translateX(-400px);}
+    nav ol li:nth-child(3){transform: translateX(-450px);}
+    nav ol li:nth-child(4){transform: translateX(-500px);}
+    nav ol li:nth-child(5){transform: translateX(-550px);}
+    /*SE PUEDE OBVIA ---------*/
+    nav .menu__bar {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 57px;
+        cursor: pointer;
+    }
+    nav .menu__bar #menu__times{
+        display: none;
+    }
+    #check:checked ~ nav .menu__bar #menu__times{
+        display: block;
+    }
+    #check:checked ~ nav .menu__bar #menu__bars{
+        display: none;
+    }
+    #check:checked ~ nav ol{
+        visibility: visible;
+        height: 465px;
+    }
+    #check:checked ~ nav ol li:nth-child(1),
+    #check:checked ~ nav ol li:nth-child(2),
+    #check:checked ~ nav ol li:nth-child(3),
+    #check:checked ~ nav ol li:nth-child(4),
+    #check:checked ~ nav ol li:nth-child(5){transform: translateX(0); opacity: 1}
+}
