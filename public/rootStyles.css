@@ -2,7 +2,26 @@
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
-
+body {
+    background: #ebebeb;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 15px;
+    border: 2px solid var(--scrollbarBG);
+}
+html {
+    --scrollbarBG: #a19e9f;
+    --thumbBG: #745b3f;
+}
 .container{
     display: flex;
     flex-grow: 1;
