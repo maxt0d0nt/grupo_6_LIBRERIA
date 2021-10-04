@@ -158,14 +158,13 @@ SLIDER
     }
 }
 
-/*BEST SELLER */
+
 .card-list {
-    display: flex;
-    height: auto;
     width: 100%;
     margin: 0 4%;
     flex-direction: column;
     margin-top: 100px;
+    flex-grow: 1;
 }
 
 .best-seller__arrow {
@@ -174,6 +173,7 @@ SLIDER
     align-self: center;
     border-radius: 30px;
     cursor: pointer;
+    display: none;
 }
 .best-seller__arrow--left {background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;}
 .best-seller__arrow--right {background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;}
@@ -181,18 +181,18 @@ SLIDER
 
 .best-seller__books li {
     background: #938a80;
-    height: 95%;
+    height: 300px;
     margin: 8px;
     min-width: 225px;
+    max-width: 226px;
 }
 
 .best-seller__books {
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
-    height: 300px;
     justify-content: space-evenly;
+    flex-direction: row;
 }
 
 .best-seller__title {
@@ -204,15 +204,19 @@ SLIDER
 }
 
 .best-seller__carousel {
-    display: flex;
-    flex-direction: row;
+}
+.best-seller__img{
+    height: 100%;
+    width: 100%;
 }
 
 .promotion--bank {
     display: flex;
-    background: #938a80;
+    background: white;
 
 }
 img.promotion__img {
-    height: 130px;
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
 }
