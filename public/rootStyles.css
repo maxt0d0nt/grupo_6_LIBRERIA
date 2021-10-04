@@ -26,6 +26,7 @@ html {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
+
 }
 
 #style-2::-webkit-scrollbar-track
