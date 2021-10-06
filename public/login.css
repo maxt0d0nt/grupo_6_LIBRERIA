@@ -1,1 +1,21 @@
 @import "/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+@import "homeMenu.css";
+@import "rootStyles.css";
+
+*{box-sizing:border-box;}
+
+
+input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+} 
+
+input[type="submit"]:hover{
+	cursor:pointer;
+}
