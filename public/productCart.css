@@ -1,6 +1,13 @@
 @import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "homeMenu.css";
 @import "rootStyles.css";
+@import "footer.css";
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .detail.detail-box {
     display: flex;

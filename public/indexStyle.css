@@ -1,6 +1,7 @@
 @import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "homeMenu.css";
 @import "rootStyles.css";
+@import "footer.css";
 :root {
     --first-color: #eb3349;
     --last-color: #f45c43;
@@ -19,6 +20,7 @@
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 
@@ -220,6 +222,37 @@ img.promotion__img {
     width: 100%;
     object-fit: scale-down;
 }
+/*SOCIAL=================*/
+.social.social-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1.social__title {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+}
+
+.social__list-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 41px;
+    gap: 16px;
+    margin-top: 12px;
+}
+.social__list-box i:hover {
+    transform: scale(1.4);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+/*FOOTER================*/
 
 a:link {
     text-decoration: none;
