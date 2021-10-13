@@ -1,6 +1,6 @@
 @import "/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
-@import "homeMenu.css";
-@import "rootStyles.css";
+@import "/css/layout/homeMenu.css";
+@import "/rootStyles.css";
 
 *{box-sizing:border-box;}
 
