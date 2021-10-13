@@ -54,3 +54,13 @@ input[type="submit"]:hover{
 	margin-bottom: 10px;
 	
 }
+
+a:link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: white;
+  }

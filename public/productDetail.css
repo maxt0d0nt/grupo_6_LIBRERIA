@@ -109,3 +109,13 @@ img{
     .box1 {width: 40%;}
     .box2 {width: 60%;}
 }
+
+a:link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: white;
+  }
