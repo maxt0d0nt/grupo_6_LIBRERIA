@@ -1,3 +1,111 @@
 @import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "homeMenu.css";
 @import "rootStyles.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 80%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.box1{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+img{
+    /* margin-left: 20%; */
+    /* margin-right: 20%; */
+    height: 300px;
+    /* width: 100%; */
+}
+.redes{
+    width: 100%;
+    margin-right: 20%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    
+}
+
+.box2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+.artName{
+    width: 100%;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+.artPrice{
+    width: 100%;
+    font-weight: bolder;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+.artDescrip{
+    width: 100%;
+    height: fit-content;
+    justify-content: space-around;
+}
+.carrito{
+    display: flex;
+    padding: 3px;
+    align-self: flex-start;
+    color: black;
+}
+.titulo{
+    padding:5px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+
+}
+.intereses{
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    }
+    .intereses section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 14px;
+}
+
+.redes section {
+    font-size: 29px;
+    color: black;
+}
+
+.redes a {
+    color: black;
+}
+
+@media (min-width: 1024px) {
+    .box1 {width: 40%;}
+    .box2 {width: 60%;}
+}
