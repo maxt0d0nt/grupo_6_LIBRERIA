@@ -18,15 +18,15 @@
     width: 80%;
     padding: 10px;
     justify-content: space-between;
-  
 }
+
 .box1{
     display: flex;
     flex-wrap: wrap;
-    width: 40%;
+    width: 100%;
     justify-content: center;
     gap: 10px;
-   }
+}
 img{
     /* margin-left: 20%; */
     /* margin-right: 20%; */
@@ -47,8 +47,9 @@ img{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 60%;
-    
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
 }
 .artName{
     width: 100%;
@@ -63,7 +64,7 @@ img{
     padding-bottom: 10px;
 }
 .artDescrip{
-    width: 75%;
+    width: 100%;
     height: fit-content;
     justify-content: space-around;
 }
@@ -101,4 +102,9 @@ img{
 
 .redes a {
     color: black;
+}
+
+@media (min-width: 1024px) {
+    .box1 {width: 40%;}
+    .box2 {width: 60%;}
 }
