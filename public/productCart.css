@@ -1,43 +1,71 @@
 @import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "homeMenu.css";
 @import "rootStyles.css";
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
-}
 
-.container{
+.detail.detail-box {
     display: flex;
-    flex-grow: 1;
     flex-wrap: wrap;
-}
-.shop-details {
     width: 100%;
-    margin: 0 4%;
+    padding: 25px 25px;
+}
+
+.img-box {
+    height: 287px;
+    display: flex;
+}
+
+.title-box {
+    width: 100%;
+    font-size: 36px;
+}
+
+.article-show-box {
+    display: flex;
+}
+
+.article-show-box {
+    width: 80%;
+    margin: 25px auto;
+}
+
+.article-show-box article {
+    width: 30%;
+    display: flex;
+    gap: 20px;
+}
+
+.prices-box {
+    display: flex;
+    width: 70%;
+}
+
+.prices-box ~ p {
+    width: 100%;
+}
+
+.prices-box p {
+    width: 100%;
+}
+
+ol.details-stock {
+    display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    gap: 30px;
+}
+
+.column-fl {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    text-align: center;
 }
- 
-.shop-title {
-    margin-top: 40px;
-    margin-left: 4%;
-    width: 100%;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 50px;
-    font-weight: 800;
-    margin-bottom: 11px;
-}
-
-.book-img {
-    height: 320px ;
-    width: 160;
-
-}
-.icon-list {
-    width: 130px ;
-    height: 130px ;
-    align-content: ;
+button {
+    align-self: flex-end;
+    height: 40px;
+    width: 102px;
+    background: red;
+    border: 2px solid rgb(245 54 54);
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px red;
 }
