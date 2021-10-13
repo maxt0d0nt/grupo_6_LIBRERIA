@@ -1,3 +1,71 @@
 @import "resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "homeMenu.css";
 @import "rootStyles.css";
+
+.detail.detail-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 25px 25px;
+}
+
+.img-box {
+    height: 287px;
+    display: flex;
+}
+
+.title-box {
+    width: 100%;
+    font-size: 36px;
+}
+
+.article-show-box {
+    display: flex;
+}
+
+.article-show-box {
+    width: 80%;
+    margin: 25px auto;
+}
+
+.article-show-box article {
+    width: 30%;
+    display: flex;
+    gap: 20px;
+}
+
+.prices-box {
+    display: flex;
+    width: 70%;
+}
+
+.prices-box ~ p {
+    width: 100%;
+}
+
+.prices-box p {
+    width: 100%;
+}
+
+ol.details-stock {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.column-fl {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    text-align: center;
+}
+button {
+    align-self: flex-end;
+    height: 40px;
+    width: 102px;
+    background: red;
+    border: 2px solid rgb(245 54 54);
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px red;
+}
