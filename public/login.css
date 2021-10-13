@@ -12,10 +12,44 @@ input[type="submit"]{
 	border:1px solid #000;
 	border-radius:5px;
 	display:block;
-	color:#fff;
-	background-color:#000;
+	color:#000;
+	background-color:#eb3349;;
+	box-shadow: 7px 13px 37px #000;
+	font-weight: 700;
 } 
 
 input[type="submit"]:hover{
 	cursor:pointer;
+}
+main {
+	margin: auto;
+}
+.form-in {
+	width: 400px;
+	--first-color: #eb3349;
+    --last-color: #f45c43;
+    background: linear-gradient(to bottom, var(--first-color), var(--last-color));
+	padding: 30px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 5px;
+	text-align: justify;
+	box-shadow: 7px 13px 37px #000;
+		
+}
+.form-in h4{
+	font-size: 30px;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.datos{
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 12px;
+	margin-bottom: 10px;
+	
 }
