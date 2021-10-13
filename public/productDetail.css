@@ -24,12 +24,14 @@
     display: flex;
     flex-wrap: wrap;
     width: 40%;
+    justify-content: center;
+    gap: 10px;
    }
 img{
-    margin-left: 20%;
-    margin-right: 20%;
+    /* margin-left: 20%; */
+    /* margin-right: 20%; */
     height: 300px;
-    width: 100%;
+    /* width: 100%; */
 }
 .redes{
     width: 100%;
@@ -81,5 +83,22 @@ img{
     display: flex;
     width: 80%;
     flex-wrap: wrap;
-
+    justify-content: center;
+    margin: 0 auto;
     }
+    .intereses section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 14px;
+}
+
+.redes section {
+    font-size: 29px;
+    color: black;
+}
+
+.redes a {
+    color: black;
+}
