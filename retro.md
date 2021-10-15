@@ -1,11 +1,11 @@
 
-Comenzar a hacer
+<h2>Comenzar a hacer</h2>
     Reuniones semanales con fecha fija
-Hacer más
+<h2>Hacer más</h2>
     Revision de commits
-Continuar haciendo
+<h2>Continuar haciendo</h2>
     Trabajo en equipo
-Hacer menos
+<h2>Hacer menos</h2>
     Commits inecesarios
-Dejar de hacer
+<h2>Dejar de hacer</h2>
     Acumular pendientes
