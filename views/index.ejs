@@ -13,29 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="menu">
-            <input type="checkbox" id="check">
-            <nav>
-                <div class="menu__icon">Re@dme</div>
-                <ol>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/productDetail">Mis Compras</a></li>
-                    <li><a href="/productCart">Productos</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
-                </ol>
-                <div class="search menu__search_box">
-                    <input type="search" placeholder="Search here">
-                    <span class="fa fa-search"></span>
-                    <a href="/login"><i class="fas fa-user-circle menu__avatar"></i></a>
-                        <p><a href="/login">Usuario</a></p>
-                </div>
-                <label for="check" class="menu__bar">
-                    <span class="fa fa-bars" id="menu__bars"></span>
-                    <span class="fa fa-times" id="menu__times"></span>
-                </label>
-            </nav>
-        </div>
+        <%- include('./partials/menu') %>
         <div id="slider">
 
             <div id="slides">
@@ -76,10 +54,9 @@
             </div>
             <div class="best-seller__carousel">
                 <ol id="style-2" class="best-seller__books">
-                   <li><img class="best-seller__img" src="/img/example1.jpg" alt="libro"></li>
-                   <li><img class="best-seller__img" src="/img/example2.jpg" alt="libro"></li>
-                   <li><img class="best-seller__img" src="/img/example3.jpg" alt="libro"></li>
-                   <li><img class="best-seller__img" src="/img/example4.jpg" alt="libro"></li>
+                    <% products.bestSeller.forEach(products => { %>
+                        <li><img class="best-seller__img" src=<%= products.path %> alt="<%= products.name %>"></li>
+                    <%});%>
                 </ol>
             </div>
 
@@ -90,10 +67,9 @@
             </div>
             <div class="best-seller__carousel">
                 <ol id="style-2" class="best-seller__books _flex _wrap">
-                    <li><img class="best-seller__img" src="/img/example1.jpg" alt=""></li>
-                    <li><img class="best-seller__img" src="/img/example2.jpg" alt=""></li>
-                    <li><img class="best-seller__img" src="/img/example3.jpg" alt=""></li>
-                    <li><img class="best-seller__img" src="/img/example4.jpg" alt=""></li>
+                    <% products.promotion.forEach(products => { %>
+                        <li><img class="best-seller__img" src=<%= products.path %> alt="<%= products.name %>"></li>
+                    <%});%>
                 </ol>
             </div>
 
@@ -119,30 +95,7 @@
                 <i class="fab fa-youtube"></i>
             </div>
         </div>
-        <footer class="footer-box">
-            <div class="logo logo-box">
-                <i class="fas fa-book"></i>
-            </div>
-            <ol class="guia-compra-box">
-                <li>Atencion al cliente</li>
-                <li>Promociones</li>
-                <li>Promociones bancarias</li>
-                <li>Costos de envio</li>
-                <li>FAQ</li>
-            </ol>
-            <ol class="acerca-box">
-                <li>Quienes somos</li>
-                <li>Como comprar</li>
-                <li>Politica de devolucion</li>
-            </ol>
-            <ol class="readme-box">
-                <li>Locales</li>
-                <li>Contactos</li>
-                <li>Trabaja con nosotros</li>
-                <li>Politicas</li>
-                <li>Telefono: </li>
-            </ol>
-        </footer>
+        <%- include('./partials/footer') %>
 
     </div>
 
