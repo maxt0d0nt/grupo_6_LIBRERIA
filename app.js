@@ -5,26 +5,29 @@ const port = 3030
 
 
 const filePage = {
-    index: '/view/index.html',
-    login: '/view/login.html',
-    register: '/view/register.html',
-    productCart: '/view/productCart.html',
-    productDetail: '/view/productDetail.html'
+    index: 'index',
+    login: 'login',
+    register: 'register',
+    productCart: 'productCart',
+    productDetail: 'productDetail'
 }
 const views = ['/', '/login', '/register', '/productCart', '/productDetail']
 
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs')
+//app.set('views', './caprtea-de-vistas')
+
 /*VIEWS HTML CONTROLLER*/
 app.get(views, (req, res) => {
     switch(req.path){
         case '/':
-            res.sendFile(path.join(__dirname, filePage.index));
+            res.render('index')
             break;
         default:
             let page = req.path.slice(1, req.path.length)
-            res.sendFile(path.join(__dirname, filePage[page]));
+            res.render(filePage[page]);
     }
 
 })

@@ -13,31 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="menu">
-            <input type="checkbox" id="check">
-            <nav>
-                <div class="menu__icon"><a href="/">Re@dme</a></div>
-                
-                <ol>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/productDetail">Mis Compras</a></li>
-                    <li><a href="/productCart">Productos</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
-                </ol>
-                <div class="search menu__search_box">
-                    <input type="search" placeholder="Search here">
-                    <span class="fa fa-search"></span>
-                    <a href="/login"><i class="fas fa-user-circle menu__avatar"></i></a>
-                        <p><a href="/login">Usuario</a></p>
-                    </i>
-                </div>
-                <label for="check" class="menu__bar">
-                    <span class="fa fa-bars" id="menu__bars"></span>
-                    <span class="fa fa-times" id="menu__times"></span>
-                </label>
-            </nav>
-        </div>
+        <%- include('./partials/menu') %>
         <div class="detail detail-box _flex _wrap _w100">
             <div class="title-box _w100">
                 <p>Tus Productos</p>
@@ -62,11 +38,11 @@
                         <p>PRECIO</p>
                         <p>1439</p>
                     </div>
-                    <div class="column-fl">
+                    <div class="column-fl _flex">
                         <p>CANTIDAD</p>
                         <p>1</p>
                     </div>
-                    <div class="column-fl">
+                    <div class="column-fl _flex">
                         <p>SUBTOTAL</p>
                         <p>1439<i style="margin-left: 10px; color:red" class="far fa-times-circle"></i></p>
                     </div>
@@ -77,31 +53,7 @@
 
             
         </div>
-
     </div>
-    <footer class="footer-box">
-        <div class="logo logo-box">
-            <i class="fas fa-book"></i>
-        </div>
-        <ol class="guia-compra-box">
-            <li>Atencion al cliente</li>
-            <li>Promociones</li>
-            <li>Promociones bancarias</li>
-            <li>Costos de envio</li>
-            <li>FAQ</li>
-        </ol>
-        <ol class="acerca-box">
-            <li>Quienes somos</li>
-            <li>Como comprar</li>
-            <li>Politica de devolucion</li>
-        </ol>
-        <ol class="readme-box">
-            <li>Locales</li>
-            <li>Contactos</li>
-            <li>Trabaja con nosotros</li>
-            <li>Politicas</li>
-            <li>Telefono: </li>
-        </ol>
-    </footer>
+        <%- include('./partials/footer') %>
 </body>
 </html>
