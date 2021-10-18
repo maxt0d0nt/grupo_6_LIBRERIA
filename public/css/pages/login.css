@@ -1,15 +1,15 @@
 @import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "/css/layout/homeMenu.css";
-<<<<<<< HEAD
 @import "/rootStyles.css";
+@import "/css/rootStyles.css";
 
 *{box-sizing:border-box;}
 
 @media (max-width: 2600px) and (orientation: landscape) {
-=======
-@import "/css/rootStyles.css";
 
->>>>>>> abfc9743b0be4ad2d7f9b31559e1b7dacf396147
+
+
+
 input[type="submit"]{
 	width:100%;
 	padding:8px 16px;
