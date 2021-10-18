@@ -1,11 +1,42 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+:root {
+    /*Top Menu Colors*/
+    --first-color: #eb3349;
+    --last-color: #f45c43;
+    --background-menu: linear-gradient(to bottom, var(--first-color), var(--last-color));
+    --background-menu-mobile: radial-gradient(circle, #243b55, #141e30);
+    --fontFamDefault:'Ubuntu', sans-serif;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamDefault);
+}
+
+._flex {
+    display: flex;
+}
+._wrap{
+    flex-wrap: wrap;
+}
+
+._w100{
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 body {
     background: #ebebeb;
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    min-height: 100vh;
+    font-family: var(--fontFamDefault);
 }
 body::-webkit-scrollbar {
     width: 10px;
@@ -21,12 +52,6 @@ body::-webkit-scrollbar-thumb {
 html {
     --scrollbarBG: #a19e9f;
     --thumbBG: #745b3f;
-}
-.container{
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-
 }
 
 #style-2::-webkit-scrollbar-track

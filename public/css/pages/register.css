@@ -1,15 +1,9 @@
-@import "/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+@import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "/css/layout/homeMenu.css";
-@import "/rootStyles.css";
-
-* { margin: 0;
-	padding: 0;
-	box-sizing:border-box;
-}
+@import "/css/rootStyles.css";
 
 
 input[type="submit"]{
-	width:100%;
 	padding:8px 16px;
 	margin-top:32px;
 	border:1px solid #000;
@@ -29,8 +23,6 @@ input[type="submit"]:hover{
 
 .form-register {
 	width: 400px;
-	--first-color: #eb3349;
-	--last-color: #f45c43;
 	background: linear-gradient(to bottom, var(--first-color), var(--last-color));
 	padding: 30px;
 	margin: auto;
@@ -48,10 +40,8 @@ input[type="submit"]:hover{
 }
 
 .datos{
-	width: 100%;
 	padding: 10px;
 	border-radius: 5px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 12px;
 	margin-bottom: 10px;
 	border: 1px solid #d3a4a4;

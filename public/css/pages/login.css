@@ -1,10 +1,15 @@
-@import "/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+@import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "/css/layout/homeMenu.css";
+<<<<<<< HEAD
 @import "/rootStyles.css";
 
 *{box-sizing:border-box;}
 
 @media (max-width: 2600px) and (orientation: landscape) {
+=======
+@import "/css/rootStyles.css";
+
+>>>>>>> abfc9743b0be4ad2d7f9b31559e1b7dacf396147
 input[type="submit"]{
 	width:100%;
 	padding:8px 16px;
@@ -21,13 +26,9 @@ input[type="submit"]{
 input[type="submit"]:hover{
 	cursor:pointer;
 }
-main {
-	margin: auto;
-}
+
 .form-in {
 	width: 400px;
-	--first-color: #eb3349;
-    --last-color: #f45c43;
     background: linear-gradient(to bottom, var(--first-color), var(--last-color));
 	padding: 30px;
 	margin: auto;
@@ -45,10 +46,8 @@ main {
 }
 
 .datos{
-	width: 100%;
 	padding: 10px;
 	border-radius: 5px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 12px;
 	margin-bottom: 10px;
 	
