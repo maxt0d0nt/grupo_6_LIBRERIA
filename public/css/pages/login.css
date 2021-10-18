@@ -1,7 +1,6 @@
 @import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
 @import "/css/rootStyles.css";
 @import "/css/layout/homeMenu.css";
-@import "/rootStyles.css";
 
 
 
@@ -65,12 +64,12 @@ a:link {
 	p { margin: 25px;}
 
 	.form-in{
-        width: 100%;
-        margin: 0px;
-        margin-top: 100px;
-        border-radius: 0px;
-        text-align: justify;
-        box-shadow: none;
+	width: 100%;
+    margin: 0px;
+    margin-top: 100px;
+    border-radius: 0px;
+    text-align: justify;
+    box-shadow: none;
 	}
 
 	main {
