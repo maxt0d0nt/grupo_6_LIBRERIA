@@ -1,6 +1,6 @@
 @import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
-@import "/css/layout/homeMenu.css";
 @import "/css/rootStyles.css";
+@import "/css/layout/homeMenu.css";
 @import "/css/layout/footer.css";
 
 /*SLIDER=================*/

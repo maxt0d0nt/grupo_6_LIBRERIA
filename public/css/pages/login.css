@@ -1,15 +1,12 @@
 @import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+@import "/css/rootStyles.css";
 @import "/css/layout/homeMenu.css";
-<<<<<<< HEAD
 @import "/rootStyles.css";
 
-*{box-sizing:border-box;}
+
 
 @media (max-width: 2600px) and (orientation: landscape) {
-=======
-@import "/css/rootStyles.css";
 
->>>>>>> abfc9743b0be4ad2d7f9b31559e1b7dacf396147
 input[type="submit"]{
 	width:100%;
 	padding:8px 16px;
@@ -68,13 +65,12 @@ a:link {
 	p { margin: 25px;}
 
 	.form-in{
-	width: 100%;
-	
-	margin: 0px;
-	margin-top: 100px;
-	border-radius: 0px;
-	text-align: justify;
-	box-shadow: 0px;
+        width: 100%;
+        margin: 0px;
+        margin-top: 100px;
+        border-radius: 0px;
+        text-align: justify;
+        box-shadow: none;
 	}
 
 	main {
@@ -89,7 +85,6 @@ a:link {
 
 	body {
 		background-color: #f45c43;
-
 	}
 
 	.datos{
