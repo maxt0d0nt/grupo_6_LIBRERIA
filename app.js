@@ -87,3 +87,7 @@ app.use('/productos', rutesProduct)
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
+app.get('/productsForm', (req,res)=>{
+    res.render('productsForm')
+});
