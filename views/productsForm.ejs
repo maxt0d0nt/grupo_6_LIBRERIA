@@ -18,7 +18,7 @@
 
         <main class="form-register">
 
-                    <form action="#" method="" name="forProducts">
+                    <form action="/post" method="" name="forProducts" enctype="multipart/form-data">
                         <h4>FORMULARIO DE PRODUCTOS</h4>
                         <div>
                             <label>NOMBRE:</label>
@@ -44,7 +44,9 @@
                             <label>PRECIO:</label>
                             <input type="number" name="PRECIO">
                         </div>
-                        
+                        <label>Imagen del Producto</label>
+                        <input type="file" name= "ProductIMG" >
+                        <button type="submit">Crear Producto</button>
                     </form>
                         
 
