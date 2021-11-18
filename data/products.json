@@ -3,8 +3,8 @@
   "id": "0",
   "name": "Ficciones",
   "author": "Jose Luis Borges",
-  "path": "/img/ficcionesBorges.jpg",
-  "description": "Las ediciones actuales de Ficciones reúnen todos los relatos publicados en la edición de 1956 (que agrega tres relatos a la versión de 1944) y siguen dividiendo el libro en dos partes: El jardín de los senderos que se bifurcan y Artificios.     ",
+  "path": "/img/uploads/image-1637279961519.jpg",
+  "description": "Las ediciones actuales de Ficciones reúnen todos los relatos publicados en la edición de 1956 (que agrega tres relatos a la versión de 1944) y siguen dividiendo el libro en dos partes: El jardín de los senderos que se bifurcan y Artificios.         ",
   "literatureCategory": "action",
   "ecomerceCategory": "promotion"
  },
@@ -13,6 +13,7 @@
   "name": "La metamorfosis",
   "author": "Franz Kafka",
   "description": "La metamorfosis es un relato dividido en tres partes, donde se narra la transformación de Gregorio Samsa, un viajante de comercio de telas, en un monstruoso insecto, y el impacto que tendrá este acontecimiento no solo en su vida, sino en la de su familia.",
+  "price": "950",
   "path": "/img/metamorfosis.jpg",
   "literatureCategory": "action",
   "ecomerceCategory": "promotion"
@@ -22,6 +23,7 @@
   "name": "1984",
   "author": "George Orwell",
   "description": "1984 de George Orwell es una novela de distopía cuya trama ocurre en Oceanía, un país dominado por un gobierno totalitario que mantiene en constante vigilancia a sus ciudadanos e, incluso, insiste en espiar sus pensamientos para mantener el orden.",
+  "price": "1600",
   "path": "/img/1984.jpg",
   "literatureCategory": "suspense",
   "ecomerceCategory": "promotion"
@@ -31,6 +33,7 @@
   "name": "El cuervo",
   "author": "Edgar Allan Poe",
   "description": "",
+  "price": "2100",
   "path": "/img/elcuervo.jpg",
   "literatureCategory": "drama",
   "ecomerceCategory": "promotion"
@@ -39,7 +42,8 @@
   "id": "4",
   "name": "Padre Rico, Padre Pobre",
   "author": "Robert Kiyosaki y Sharon Lechter",
-  "description": "",
+  "description": "El libro está basado en la educación financiera que Kiyosaki recibió de su \"Padre Rico\" en Hawái, aunque el grado de ficción de estas anécdotas está en discusión. Por el intensivo uso de alegorías, algunos lectores creen que Kiyosaki creó deliberadamente a su \"Padre Rico\". El libro remarca las diferentes actitudes hacia el dinero, el trabajo y la vida de estos dos y como ellos tuvieron influencia en la vida de ambos.",
+  "price": "3000",
   "path": "/img/padreRicoApadrePobre.png",
   "literatureCategory": "suspense",
   "ecomerceCategory": "bestSeller"
@@ -48,7 +52,8 @@
   "id": "5",
   "name": "7 habitos de la gente altamente efectiva",
   "author": "Stephen Covey",
-  "description": "",
+  "description": "Los 7 hábitos de la gente altamente efectiva de Stephen Covey es un libro que habla sobre la importancia de cambiar la percepción que tenemos sobre las situaciones en las que nos encontramos para hacernos responsables de nuestros actos (y de las consecuencias de los mismos), mediante nuevos hábitos.",
+  "price": "1300",
   "path": "/img/7hdlgae.jpg",
   "literatureCategory": "drama",
   "ecomerceCategory": "bestSeller"
@@ -57,7 +62,8 @@
   "id": "6",
   "name": "Las 7 leyes espirituales del éxito Deepak Chopra",
   "author": "Deepak Chopra",
-  "description": "",
+  "description": "Deepak Chopra, de una manera magistral, plasma, en pocas hojas todo lo que se puede requerir para tener éxito en la vida, en su libro clásico Las 7 Leyes espirituales del éxit",
+  "price": "1100",
   "path": "/img/7lede.png",
   "literatureCategory": "action",
   "ecomerceCategory": "bestSeller"
