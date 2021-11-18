@@ -32,8 +32,13 @@
                 <textarea id="description" name="description"><%= productToEdit.description %> </textarea><br><br>
                 <label for="literatureCategory">Literature Category:</label>
                 <input type="text" id="literatureCategory" name="literatureCategory" value="<%= productToEdit.literatureCategory%>"><br><br>
-                <label for="ecomerceCategory">Ecomerce Category:</label>
-                <input type="text" id="ecomerceCategory" name="ecomerceCategory" value="<%= productToEdit.ecomerceCategory%>"><br><br>
+
+                <label for="cars">Ecomerce Category:</label>
+                <select id="ecomerceCategory" name="ecomerceCategory">
+                    <option value="">N/A</option>
+                    <option <% if (productToEdit.ecomerceCategory === 'promotion') { %> selected <% } %> value="promotion">promotion</option>
+                    <option <% if (productToEdit.ecomerceCategory === 'bestSeller') { %> selected <% } %> value="bestSeller">bestSeller</option>
+                </select>
                 <input type="submit" value="Submit">
             </form>
 
