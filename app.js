@@ -17,7 +17,7 @@ const filePage = {
     login: 'login',
     register: 'register',
     productCart: 'productCart',
-    productDetail: 'productDetail'
+    productDetail: 'productBuy'
 }
 const views = ['/login', '/register', '/productCart', '/productDetail'];
 

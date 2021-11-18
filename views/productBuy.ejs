@@ -12,51 +12,51 @@
     <link rel="shortcut icon" type="image/x-icon" href="/img/1634170193.ico">
 </head>
 <body>
-<div class="container">
-    <%- include('./partials/menu') %>
-    <div class="contenedor">
-        <div class="box1">
-            <img src="<%= productSelected.path %>" alt="<%= productSelected.name %>">
-            <div class="redes">
+    <div class="container">
+        <%- include('./partials/menu') %>
+        <div class="contenedor">
+       <div class="box1">
+           <img src="/img/example1.jpg" alt="libro">
+           <div class="redes">
                 <section><a href="#"><i class="fab fa-instagram"></i></a></section>
                 <section><a href="#"><i class="fab fa-whatsapp"></i></a></section>
                 <section><a href="#"><i class="fab fa-facebook-square"></i></a></section>
                 <section><a href="#"><i class="fas fa-share-alt-square"></i></a></section>
-            </div>
+           </div>             
+       </div>
+       <div class="box2">
+           <div class="artName">
+               <p>
+                AWAKE ARISE
+               </p>
+           </div>
+           <div class="artPrice">
+               <p>$1.000</p>
+           </div>
+           <div class="artDescrip">
+               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis doloremque, dolore omnis iusto odio tempora libero ipsa magni odit labore laudantium quia maiores, hic modi minus temporibus consequuntur quis? Deserunt.</p>
+           </div>
+           <button type="submit" class="carrito"><i class="fas fa-shopping-cart"></i></button>
         </div>
-        <div class="box2">
-            <div class="artName">
-                <p>
-                    <%= productSelected.name %>
-                </p>
-            </div>
-            <div class="artPrice">
-                <p>$<%= productSelected.price %></p>
-            </div>
-            <div class="artDescrip">
-                <p><%= productSelected.description %></p>
-            </div>
-            <button type="submit" class="carrito"><i class="fas fa-shopping-cart"></i></button>
-        </div>
-    </div>
-    <div class="intereses-box">
-        <div class="titulo">
-            <p>TAMBIEN PUEDE INTERESARTE</p>
-        </div>
-        <div class="intereses">
-            <section>
-                <img src="/img/example2.jpg" alt="libro">
+   </div>
+        <div class="intereses-box">
+       <div class="titulo">
+           <p>TAMBIEN PUEDE INTERESARTE</p>
+       </div>
+       <div class="intereses">
+           <section>
+               <img src="/img/example2.jpg" alt="libro">
                 <img src="/img/example3.jpg" alt="libro">
                 <img src="/img/example4.jpg" alt="libro">
                 <img src="/img/example3.jpg" alt="libro">
-                <img src="/img/example2.jpg" alt="libro">
-                <img src="/img/example3.jpg" alt="libro">
-                <img src="/img/example4.jpg" alt="libro">
-                <img src="/img/example3.jpg" alt="libro">
+               <img src="/img/example2.jpg" alt="libro">
+               <img src="/img/example3.jpg" alt="libro">
+               <img src="/img/example4.jpg" alt="libro">
+               <img src="/img/example3.jpg" alt="libro">
             </section>
-        </div>
+       </div>
     </div>
-    <%- include('./partials/footer') %>
-</div>
+        <%- include('./partials/footer') %>
+    </div>
 </body>
 </html>

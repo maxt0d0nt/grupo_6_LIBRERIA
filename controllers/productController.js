@@ -14,11 +14,9 @@ const controller = {
 
     // Detail - Detail from one product
     detail: (req, res) => {
-        // Aca necesitamos recibir un objeto de tipo producto
-        // Primero buscamos el producto correspondiente
-
-        // Calculo el final price en el controlador para que la vista quede mas limpia
-
+        const productId = req.params.id;
+        const productKey = products.map(p => p.id).indexOf(productId)
+        res.render('productDetail',{productSelected: products[productKey]})
     },
 
     // Create - Form to create
@@ -31,7 +29,7 @@ const controller = {
         const maxId = Number(products.reduce(function(prev, current) {
             return (prev.id > current.id) ? prev.id : current.id
         }))
-        const {name, author, description, literatureCategory, ecomerceCategory} = req.body
+        const {name, author, description, literatureCategory, ecomerceCategory, price} = req.body
         const path =  req.file ? '/img/uploads/' + req.file.filename : ''
         const newId = (maxId + 1).toString()
 
@@ -41,6 +39,7 @@ const controller = {
             author,
             path,
             description,
+            price,
             literatureCategory,
             ecomerceCategory,
         };

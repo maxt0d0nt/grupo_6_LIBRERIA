@@ -55,7 +55,7 @@
             <div class="best-seller__carousel">
                 <ol id="style-2" class="best-seller__books">
                     <% productsBestSeller.forEach(products => { %>
-                        <li><img class="best-seller__img" src=<%= products.path %> alt="<%= products.name %>"></li>
+                        <li><a href="product/detail/<%= products.id %>"><img class="best-seller__img" src=<%= products.path %> alt="<%= products.name %>"></a></li>
                     <%});%>
                 </ol>
             </div>
@@ -68,7 +68,7 @@
             <div class="best-seller__carousel">
                 <ol id="style-2" class="best-seller__books _flex _wrap">
                     <% productsPomotions.forEach(products => { %>
-                        <li><img class="best-seller__img" src=<%= products.path %> alt="<%= products.name %>"></li>
+                        <li><a href="product/detail/<%= products.id %>"><img class="best-seller__img" src=<%= products.path %> alt="<%= products.name %>"></a></li>
                     <%});%>
                 </ol>
             </div>
