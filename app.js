@@ -3,9 +3,11 @@ var path = require('path');
 const app = express()
 const port = 3030
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const bodyParser = require("body-parser");
 
 
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(bodyParser.urlencoded({extended: false}));
 
 /*CONTROLLERS IMPORT */
 const productController = require('./controllers/productController')

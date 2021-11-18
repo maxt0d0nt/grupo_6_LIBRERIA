@@ -14,6 +14,10 @@ router.put('/:id', upload.single('image'), productController.update);
 
 router.delete('/:id', productController.destroy);
 
+
+router.get('/create', productController.create);
+router.post('/', upload.single('image'), productController.store);
+
 router.get('/detalle/:id',(req,res) => {
 
 })

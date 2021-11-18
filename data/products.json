@@ -1,16 +1,18 @@
 [
-  {
-    "id": "0",
-    "name": "Ficciones",
-    "author": "Jose Luis Borges",
-    "path": "/img/example1.jpg",
-    "literatureCategory": "action",
-    "ecomerceCategory": "promotion"
-  },
+ {
+  "id": "0",
+  "name": "Ficciones",
+  "author": "Jose Luis Borges",
+  "path": "/img/example1.jpg",
+  "description": "Las ediciones actuales de Ficciones reúnen todos los relatos publicados en la edición de 1956 (que agrega tres relatos a la versión de 1944) y siguen dividiendo el libro en dos partes: El jardín de los senderos que se bifurcan y Artificios.",
+  "literatureCategory": "action",
+  "ecomerceCategory": "promotion"
+ },
  {
   "id": "1",
   "name": "La metamorfosis",
   "author": "Franz Kafka",
+  "description": "La metamorfosis es un relato dividido en tres partes, donde se narra la transformación de Gregorio Samsa, un viajante de comercio de telas, en un monstruoso insecto, y el impacto que tendrá este acontecimiento no solo en su vida, sino en la de su familia.",
   "path": "/img/example2.jpg",
   "literatureCategory": "action",
   "ecomerceCategory": "promotion"
@@ -19,6 +21,7 @@
   "id": "2",
   "name": "1984",
   "author": "George Orwell",
+  "description": "1984 de George Orwell es una novela de distopía cuya trama ocurre en Oceanía, un país dominado por un gobierno totalitario que mantiene en constante vigilancia a sus ciudadanos e, incluso, insiste en espiar sus pensamientos para mantener el orden.",
   "path": "/img/example3.jpg",
   "literatureCategory": "suspense",
   "ecomerceCategory": "promotion"
@@ -27,6 +30,7 @@
   "id": "3",
   "name": "El cuervo",
   "author": "Edgar Allan Poe",
+  "description": "",
   "path": "/img/example4.jpg",
   "literatureCategory": "drama",
   "ecomerceCategory": "promotion"
@@ -35,6 +39,7 @@
   "id": "4",
   "name": "Padre Rico, Padre Pobre",
   "author": "Robert Kiyosaki y Sharon Lechter",
+  "description": "",
   "path": "/img/example1.jpg",
   "literatureCategory": "suspense",
   "ecomerceCategory": "bestSeller"
@@ -43,6 +48,7 @@
   "id": "5",
   "name": "7 habitos de la gente altamente efectiva",
   "author": "Stephen Covey",
+  "description": "",
   "path": "/img/example2.jpg",
   "literatureCategory": "drama",
   "ecomerceCategory": "bestSeller"
@@ -51,15 +57,8 @@
   "id": "6",
   "name": "Ley Del Karma, Ley De La Voluntad, Ley Del Amor. Las Tres Le",
   "author": "Deepak Chopra",
+  "description": "",
   "path": "/img/example3.jpg",
-  "literatureCategory": "action",
-  "ecomerceCategory": "bestSeller"
- },
- {
-  "id": "7",
-  "name": "Coigo limpio / Clean code",
-  "author": "Robert C. Martin",
-  "path": "/img/example4.jpg",
   "literatureCategory": "action",
   "ecomerceCategory": "bestSeller"
  }

@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsImagesPath = path.join(__dirname, '../public');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
@@ -22,25 +23,33 @@ const controller = {
 
     // Create - Form to create
     create: (req, res) => {
-        // Renderizar el formulario de create
-        // No necesita parametros
-        res.render('product-create-form');
+        res.render('productCreate');
     },
 
     // Create -  Method to store
     store: (req, res) => {
-        // ✓ Acceder a nuestro archivo JSON
-        // ✓ Leer los datos y convertirlos en un array para modificarlo
-        // Leer los datos que vienen en la request (req.body)
+        const maxId = Number(products.reduce(function(prev, current) {
+            return (prev.id > current.id) ? prev.id : current.id
+        }))
+        const {name, author, description, literatureCategory, ecomerceCategory} = req.body
+        const path =  req.file ? '/img/uploads/' + req.file.filename : ''
+        const newId = (maxId + 1).toString()
 
-        // Modificar el arreglo para agregar el nuevo producto
+        const newProduct = {
+            id:newId,
+            name,
+            author,
+            path,
+            description,
+            literatureCategory,
+            ecomerceCategory,
+        };
+
+        products.push(newProduct)
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
 
-        // Escribir en el JSON el nuevo arreglo actualizado
-
-
-        // res.redirect('index');
-        res.redirect('/');
+        res.redirect('/product/all');
     },
 
     // Update - Form to edit
@@ -54,9 +63,8 @@ const controller = {
     update: (req, res) => {
         const productId = req.params.id;
         const productKey = products.map(p => p.id).indexOf(productId)
-        console.log({productKey, productId})
 
-        const {name, author, literatureCategory, ecomerceCategory} = req.body
+        const {name, author, description, literatureCategory, ecomerceCategory} = req.body
         const path =  req.file ? '/img/uploads/' + req.file.filename : products[productKey].path
 
         const updatedProduct = {
@@ -64,6 +72,7 @@ const controller = {
             name,
             author,
             path,
+            description,
             literatureCategory,
             ecomerceCategory,
         };
@@ -80,8 +89,12 @@ const controller = {
     destroy: (req, res) => {
         const productId = req.params.id;
         const productKey = products.findIndex((p) => p.id == productId);
+        const pathDeleteImage = path.join(__dirname,`../public/${products[productKey].path}`)
+        //delete image
+        fs.unlinkSync(pathDeleteImage)
+        //delete virtual array and push to file json
         products.splice(productKey, 1);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
 
         res.redirect('/product/all');
     }
