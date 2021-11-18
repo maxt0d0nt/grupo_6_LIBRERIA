@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/pages/productAll.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Re@dMe</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/1634170193.ico">
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/menu') %>
+        <div class="card-list _w100 _flex">
+            <div class="card__title">
+                <h1>PRODUCTOS</h1>
+            </div>
+            <div class="card__carousel">
+                <ol id="style-2" class="card__books">
+                    <% products.forEach(products => { %>
+                        <li>
+                            <img class="card__img" src=<%= products.path %> alt="<%= products.name %>">
+                            <div class="card__box_buttons">
+                            <div class="card__button --edit">
+                                <a href="edit/<%= products.id %>">
+                                    Editar producto
+                                </a>
+                            </div>
+                            <div class="card__button --delete">
+                                <a>
+                                    Eliminar producto
+                                </a>
+                            </div>
+                            </div>
+                        </li>
+                    <%});%>
+                </ol>
+            </div>
+
+        </div>
+
+
+        <%- include('./partials/footer') %>
+
+    </div>
+
+</body>
+</html>

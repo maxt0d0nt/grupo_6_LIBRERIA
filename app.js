@@ -2,23 +2,26 @@ const express = require('express')
 var path = require('path');
 const app = express()
 const port = 3030
-const multer = require('multer');
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+
+
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 /*CONTROLLERS IMPORT */
 const productController = require('./controllers/productController')
-
+const mainController = require('./controllers/mainController')
 
 const filePage = {
-    index: 'index',
     login: 'login',
     register: 'register',
     productCart: 'productCart',
     productDetail: 'productDetail'
 }
-const views = ['/', '/login', '/register', '/productCart', '/productDetail'];
+const views = ['/login', '/register', '/productCart', '/productDetail'];
 
 /*ROUTES-----*/
 const rutesProduct = require('./routes/product');
+const mainRouter = require('./routes/main');
 
 
 /*PUBLIC FILES-----*/
@@ -81,14 +84,12 @@ app.get(views, (req, res) => {
 
 })
 
+app.use('/', mainRouter)
+
 //app.get('/product', productController.index);
-app.use('/productos', rutesProduct)
+app.use('/product', rutesProduct)
 
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
-
-app.get('/productsForm', (req,res)=>{
-    res.render('productsForm')
-});
