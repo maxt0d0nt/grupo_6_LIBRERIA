@@ -1,66 +1,66 @@
 [
-    {
-      "id": "0",
-      "name": "Ficciones",
-      "author": "Jose Luis Borges",
-      "path": "/img/example1.jpg",
-      "literatureCategory": "action",
-      "ecomerceCategory": "promotion"
-    },
-    {
-      "id": "1",
-      "name": "La metamorfosis",
-      "author": "Franz Kafka",
-      "path": "/img/example2.jpg",
-      "literatureCategory": "action",
-      "ecomerceCategory": "promotion"
-    },
-    {
-      "id": "2",
-      "name": "1984",
-      "author": "George Orwell",
-      "path": "/img/example3.jpg",
-      "literatureCategory": "suspense",
-      "ecomerceCategory": "promotion"
-    },
-    {
-      "id": "3",
-      "name": "El cuervo",
-      "author": "Edgar Allan Poe",
-      "path": "/img/example4.jpg",
-      "literatureCategory": "drama",
-      "ecomerceCategory": "promotion"
-    },
-    {
-      "id": "4",
-      "name": "Padre Rico, Padre Pobre",
-      "author": "Robert Kiyosaki y Sharon Lechter",
-      "path": "/img/example1.jpg",
-      "literatureCategory": "suspense",
-      "ecomerceCategory": "bestSeller"
-    },
-    {
-      "id": "5",
-      "name": "7 habitos de la gente altamente efectiva",
-      "author": "Stephen Covey",
-      "path": "/img/example2.jpg",
-      "literatureCategory": "drama",
-      "ecomerceCategory": "bestSeller"
-    },
-    {
-      "id": "6",
-      "name": "Ley Del Karma, Ley De La Voluntad, Ley Del Amor. Las Tres Le",
-      "author": "Deepak Chopra",
-      "path": "/img/example3.jpg",
-      "literatureCategory": "action",
-      "ecomerceCategory": "bestSeller"
-    },
-    {
-      "id": "7",
-      "name": "Coigo limpio / Clean code",
-      "author": "Robert C. Martin",
-      "path": "/img/example4.jpg",
-      "literatureCategory": "action",
-      "ecomerceCategory": "bestSeller"
-    }
-  ]
+  {
+    "id": "0",
+    "name": "Ficciones",
+    "author": "Jose Luis Borges",
+    "path": "/img/example1.jpg",
+    "literatureCategory": "action",
+    "ecomerceCategory": "promotion"
+  },
+ {
+  "id": "1",
+  "name": "La metamorfosis",
+  "author": "Franz Kafka",
+  "path": "/img/example2.jpg",
+  "literatureCategory": "action",
+  "ecomerceCategory": "promotion"
+ },
+ {
+  "id": "2",
+  "name": "1984",
+  "author": "George Orwell",
+  "path": "/img/example3.jpg",
+  "literatureCategory": "suspense",
+  "ecomerceCategory": "promotion"
+ },
+ {
+  "id": "3",
+  "name": "El cuervo",
+  "author": "Edgar Allan Poe",
+  "path": "/img/example4.jpg",
+  "literatureCategory": "drama",
+  "ecomerceCategory": "promotion"
+ },
+ {
+  "id": "4",
+  "name": "Padre Rico, Padre Pobre",
+  "author": "Robert Kiyosaki y Sharon Lechter",
+  "path": "/img/example1.jpg",
+  "literatureCategory": "suspense",
+  "ecomerceCategory": "bestSeller"
+ },
+ {
+  "id": "5",
+  "name": "7 habitos de la gente altamente efectiva",
+  "author": "Stephen Covey",
+  "path": "/img/example2.jpg",
+  "literatureCategory": "drama",
+  "ecomerceCategory": "bestSeller"
+ },
+ {
+  "id": "6",
+  "name": "Ley Del Karma, Ley De La Voluntad, Ley Del Amor. Las Tres Le",
+  "author": "Deepak Chopra",
+  "path": "/img/example3.jpg",
+  "literatureCategory": "action",
+  "ecomerceCategory": "bestSeller"
+ },
+ {
+  "id": "7",
+  "name": "Coigo limpio / Clean code",
+  "author": "Robert C. Martin",
+  "path": "/img/example4.jpg",
+  "literatureCategory": "action",
+  "ecomerceCategory": "bestSeller"
+ }
+]

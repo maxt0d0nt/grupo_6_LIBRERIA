@@ -32,47 +32,6 @@ app.set('view engine', 'ejs')
 
 /*VIEWS HTML CONTROLLER*/
 app.get(views, (req, res) => {
-    //DATOS ----
-    const products = {
-        bestSeller: [
-            {
-                name: "Libro 1",
-                path: "/img/example1.jpg"
-            },
-            {
-                name: "Libro 2",
-                path: "/img/example2.jpg"
-            },
-            {
-                name: "Libro 3",
-                path: "/img/example3.jpg"
-            },
-            {
-                name: "Libro 4",
-                path: "/img/example4.jpg"
-            }
-        ],
-        promotion:[
-            {
-                name: "Libro 1",
-                path: "/img/example1.jpg"
-            },
-            {
-                name: "Libro 2",
-                path: "/img/example2.jpg"
-            },
-            {
-                name: "Libro 3",
-                path: "/img/example3.jpg"
-            },
-            {
-                name: "Libro 4",
-                path: "/img/example4.jpg"
-            }
-        ],
-
-    }
-
     switch(req.path){
         case '/':
             res.render('index', {products})

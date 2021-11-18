@@ -20,20 +20,18 @@
             </div>
             <div class="card__carousel">
                 <ol id="style-2" class="card__books">
-                    <% products.forEach(products => { %>
+                    <% products.forEach(product => { %>
                         <li>
-                            <img class="card__img" src=<%= products.path %> alt="<%= products.name %>">
+                            <img class="card__img" src=<%= product.path %> alt="<%= product.name %>">
                             <div class="card__box_buttons">
                             <div class="card__button --edit">
-                                <a href="edit/<%= products.id %>">
+                                <a href="edit/<%= product.id %>">
                                     Editar producto
                                 </a>
                             </div>
-                            <div class="card__button --delete">
-                                <a>
-                                    Eliminar producto
-                                </a>
-                            </div>
+                                <form action="/product/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                    <button class="card__button --delete" type="submit">Eliminar</button>
+                                </form>
                             </div>
                         </li>
                     <%});%>
