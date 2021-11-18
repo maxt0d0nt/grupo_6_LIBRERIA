@@ -1,0 +1,82 @@
+@import "/css/resetStyle.css"; /* Resetea algunos valores de css comumente seteados de este modo */
+@import "/css/rootStyles.css";
+@import "/css/layout/homeMenu.css";
+@import "/css/layout/footer.css";
+
+
+.--edit button {background-color: #b3b3bb;;}
+.--delete button {background-color: #ff7272;}
+
+.form__box-img {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=submit]{
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-list {
+    margin: 0 4%;
+    flex-direction: column;
+    margin-top: 100px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__title {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 11px;
+}
+.form__img{
+    height: 300px;
+}
+
+
+
+/*SOCIAL=================*/
+.social.social-box {
+    flex-wrap: wrap;
+}
+
+h1.social__title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.social__list-box {
+    justify-content: center;
+    font-size: 41px;
+    gap: 16px;
+    margin-top: 12px;
+    margin-bottom: 35px;
+}
+.social__list-box i:hover {
+    transform: scale(1.4);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+/*FOOTER================*/
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
