@@ -33,10 +33,21 @@
     padding: 1px;
     border-radius: 3px;
     border: solid 1px #989898;
-    margin: 3px;
+    margin: 1px;
     cursor: pointer;
+    width: 143px;
+    display: flex;
+    justify-content: center;
 }
 
+.card__button form button {
+    height: 19px;
+    padding: 1px;
+    border-radius: 3px;
+    border: solid 1px #989898;
+    margin: 1px;
+    cursor: pointer;
+}
 
 
 .card__books {

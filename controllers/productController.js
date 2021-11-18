@@ -53,12 +53,12 @@ const controller = {
     // Update - Method to update
     update: (req, res) => {
         const productId = req.params.id;
+        const productKey = products.map(p => p.id).indexOf(productId)
+        console.log({productKey, productId})
 
-        // Generamos el producto actualizado
         const {name, author, literatureCategory, ecomerceCategory} = req.body
-        const path =  req.file ? '/img/uploads/' + req.file.filename : products[productId].path
-        console.log(path)
-        console.log("INGRESE")
+        const path =  req.file ? '/img/uploads/' + req.file.filename : products[productKey].path
+
         const updatedProduct = {
             id:productId,
             name,
@@ -67,24 +67,23 @@ const controller = {
             literatureCategory,
             ecomerceCategory,
         };
+        console.log({updatedProduct})
 
-        products[productId] = updatedProduct;
+
+        products[productKey] = updatedProduct;
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
-        res.redirect('/product');
+        res.redirect('/product/all');
     },
 
     // Delete - Delete one product from DB
     destroy: (req, res) => {
-        // Leer el id
+        const productId = req.params.id;
+        const productKey = products.findIndex((p) => p.id == productId);
+        products.splice(productKey, 1);
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
-        // Buscar la posicion actual del producto a eliminar
-
-        // Recortar el array sin ese producto
-
-        // Guardar en el json el nuevo array
-
-        res.redirect('/products');
+        res.redirect('/product/all');
     }
 };
 
