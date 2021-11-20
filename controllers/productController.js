@@ -16,7 +16,10 @@ const controller = {
     detail: (req, res) => {
         const productId = req.params.id;
         const productKey = products.map(p => p.id).indexOf(productId)
-        res.render('productDetail',{productSelected: products[productKey]})
+        res.render('productDetail',{
+            productSelected: products[productKey],
+            productPromotion: products.filter(p => p.ecomerceCategory === 'promotion')
+        })
     },
 
     // Create - Form to create

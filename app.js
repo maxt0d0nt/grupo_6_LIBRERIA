@@ -17,9 +17,8 @@ const filePage = {
     login: 'login',
     register: 'register',
     productCart: 'productCart',
-    productDetail: 'productBuy'
 }
-const views = ['/login', '/register', '/productCart', '/productDetail'];
+const views = ['/login', '/register', '/productCart'];
 
 /*ROUTES-----*/
 const rutesProduct = require('./routes/product');

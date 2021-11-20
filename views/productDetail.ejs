@@ -45,14 +45,9 @@
         </div>
         <div class="intereses">
             <section>
-                <img src="/img/example2.jpg" alt="libro">
-                <img src="/img/example3.jpg" alt="libro">
-                <img src="/img/example4.jpg" alt="libro">
-                <img src="/img/example3.jpg" alt="libro">
-                <img src="/img/example2.jpg" alt="libro">
-                <img src="/img/example3.jpg" alt="libro">
-                <img src="/img/example4.jpg" alt="libro">
-                <img src="/img/example3.jpg" alt="libro">
+                <% productPromotion.forEach(product => { %>
+                    <a href="/product/detail/<%= product.id %>"><img src="<%= product.path %>" alt="<%= product.name %>"></a>
+                <%});%>
             </section>
         </div>
     </div>
