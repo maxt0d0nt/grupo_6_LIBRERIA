@@ -16,7 +16,7 @@
         <%- include('./partials/menu') %>
         <div class="card-list _w100 _flex">
             <div class="form__title">
-                <h1>PRODUCTO A EDITAR</h1>
+                <h1>NUEVO PRODUCTO</h1>
             </div>
             <form action="/product/" method="POST" enctype="multipart/form-data">
                 <br><br>
@@ -27,12 +27,33 @@
                 <label for="description">Description:</label>
                 <textarea id="description" name="description"></textarea><br><br>
                 <label for="literatureCategory">Literature Category:</label>
-                <input type="text" id="literatureCategory" name="literatureCategory" value=""><br><br>
+
+                <select id="literatureCategory" name="literatureCategory">
+                    <option value="">N/A</option>
+                    <option value="terror">terror</option>
+                    <option value="suspenso">suspenso</option>
+                    <option value="biografia">biografia</option>
+                    <option value="novela">novela</option>
+                    <option value="policial">policial</option>
+                    <option value="ciencia">ciencia</option>
+                    <option value="religion">religion</option>
+                    <option value="cuentos infantiles">cuentos infantiles</option>
+                    <option value="programacion">programacion</option>
+                    <option value="salud">salud</option>
+                </select><br><br>
+
                 <label for="ecomerceCategory">Ecomerce Category:</label>
-                <input type="text" id="ecomerceCategory" name="ecomerceCategory" value=""><br><br>
+
+                <select id="ecomerceCategory" name="ecomerceCategory">
+                    <option value="">N/A</option>
+                    <option value="promotion">promotion</option>
+                    <option value="bestSeller">bestSeller</option>
+                </select><br><br>
+
                 <input type="file" name="image" id="file"/><br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit"><br><br>
             </form>
+            <br><br><br><br>
 
         </div>
 

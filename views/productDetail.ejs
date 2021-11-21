@@ -26,14 +26,14 @@
         </div>
         <div class="box2">
             <div class="artName">
-                <p>
-                    <%= productSelected.name %>
-                </p>
+                <p>Titulo: <%= productSelected.name %></p>
+
             </div>
             <div class="artPrice">
-                <p>$<%= productSelected.price %></p>
+                <p>Precio: $<%= productSelected.price %></p>
             </div>
             <div class="artDescrip">
+                <p>Descripcion</p><br>
                 <p><%= productSelected.description %></p>
             </div>
             <button type="submit" class="carrito"><i class="fas fa-shopping-cart"></i></button>
@@ -45,8 +45,12 @@
         </div>
         <div class="intereses">
             <section>
+
                 <% productPromotion.forEach(product => { %>
-                    <a href="/product/detail/<%= product.id %>"><img src="<%= product.path %>" alt="<%= product.name %>"></a>
+                    <div class="intereses__box_book">
+                        <a href="/product/detail/<%= product.id %>"><img src="<%= product.path %>" alt="<%= product.name %>"></a>
+                        <p><%= product.name %></p>
+                    </div>
                 <%});%>
             </section>
         </div>
