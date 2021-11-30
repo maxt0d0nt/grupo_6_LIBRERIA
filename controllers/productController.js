@@ -86,7 +86,7 @@ const controller = {
         res.redirect('/product/all');
     },
 
-    // Delete - Delete one product from DB
+    // Delete - Delete one product from DB -
     destroy: (req, res) => {
         const productId = req.params.id;
         const productKey = products.findIndex((p) => p.id == productId);
