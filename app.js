@@ -23,7 +23,7 @@ const views = ['/login', '/register', '/productCart'];
 /*ROUTES-----*/
 const rutesProduct = require('./routes/product');
 const mainRouter = require('./routes/main');
-
+const userRouter = require('./routes/user');
 
 /*PUBLIC FILES-----*/
 app.use(express.static('public'));
@@ -48,6 +48,7 @@ app.use('/', mainRouter)
 
 //app.get('/product', productController.index);
 app.use('/product', rutesProduct)
+app.use('/user', userRouter)
 
 
 app.listen(port, () => {

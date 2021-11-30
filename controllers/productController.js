@@ -5,7 +5,6 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const productsImagesPath = path.join(__dirname, '../public');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-
 const controller = {
 // Root - Show all products
     index: (req, res) => {
