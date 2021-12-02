@@ -8,15 +8,19 @@ const imgDir = '/img/uploads/products/'
 
 const controller = {
 // Root - Show all products
-    index: (req, res) => {
-        res.render('productAll', { products });
+    indexPage: (req, res) => {
+        res.render('./product/productAll', { products });
+    },
+
+    cartPage:(req, res) => {
+        res.render('./product/productCart');
     },
 
     // Detail - Detail from one product
     detail: (req, res) => {
         const productId = req.params.id;
         const productKey = products.map(p => p.id).indexOf(productId)
-        res.render('productDetail',{
+        res.render('./product/productDetail',{
             productSelected: products[productKey],
             productPromotion: products.filter(p => p.ecomerceCategory === 'promotion')
         })
@@ -24,7 +28,7 @@ const controller = {
 
     // Create - Form to create
     create: (req, res) => {
-        res.render('productCreate');
+        res.render('./product/productCreate');
     },
 
     // Create -  Method to store
@@ -59,7 +63,7 @@ const controller = {
         const productId = req.params.id
         const productToEdit = products.filter(p => p.id == productId)
 
-        res.render('productEdit',{productToEdit:productToEdit[0]})
+        res.render('./product/productEdit',{productToEdit:productToEdit[0]})
     },
     // Update - Method to update
     update: (req, res) => {
@@ -78,8 +82,6 @@ const controller = {
             literatureCategory,
             ecomerceCategory,
         };
-        console.log({updatedProduct})
-
 
         products[productKey] = updatedProduct;
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
