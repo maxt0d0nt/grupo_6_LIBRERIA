@@ -4,6 +4,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const productsImagesPath = path.join(__dirname, '../public');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const imgDir = '/img/uploads/products/'
 
 const controller = {
 // Root - Show all products
@@ -32,7 +33,7 @@ const controller = {
             return (prev.id > current.id) ? prev.id : current.id
         }))
         const {name, author, description, literatureCategory, ecomerceCategory, price} = req.body
-        const path =  req.file ? '/img/uploads/' + req.file.filename : ''
+        const path =  req.file ? imgDir + req.file.filename : ''
         const newId = (maxId + 1).toString()
 
         const newProduct = {
@@ -66,7 +67,7 @@ const controller = {
         const productKey = products.map(p => p.id).indexOf(productId)
 
         const {name, author, description, literatureCategory, ecomerceCategory} = req.body
-        const path =  req.file ? '/img/uploads/' + req.file.filename : products[productKey].path
+        const path =  req.file ? imgDir + req.file.filename : products[productKey].path
 
         const updatedProduct = {
             id:productId,

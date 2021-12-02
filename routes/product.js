@@ -18,7 +18,7 @@ router.delete('/:id', productController.destroy);
 
 //Create product
 router.get('/create', productController.create);
-router.post('/', upload.single('image'), productController.store);
+router.post('/createProduct', upload.single('image'), productController.store);
 
 //ProducDetail
 router.get('/detail/:id',productController.detail);

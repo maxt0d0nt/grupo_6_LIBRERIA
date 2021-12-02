@@ -4,7 +4,19 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, 'public/img/uploads');
+        const {path} = req.route
+        let dirUpload = ''
+        switch (path) {
+            case  '/createProduct':
+                dirUpload = 'public/img/uploads/products'
+                break
+            case '/createUser':
+                dirUpload = 'public/img/uploads/user'
+                break
+            default:
+                console.log("PATH ERRONEO")
+        }
+        callback(null, dirUpload);
     },
     filename: (req, file, callback) => {
         callback(
@@ -15,5 +27,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+// const uploadUser = multer({ storage: storageUser });
 
 module.exports = upload;
+// module.exports = uploadUser;
