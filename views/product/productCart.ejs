@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
- <%- include('./partials/head') %>
+<%- include('../partials/head',{cssStyle:'/css/pages/productCart.css'}) %>
 <body>
     <div class="container">
-        <%- include('./partials/menu') %>
+        <%- include('../partials/menu') %>
         <div class="detail detail-box _flex _wrap _w100">
             <div class="title-box _w100">
                 <p>Tus Productos</p>git
@@ -11,7 +11,7 @@
             <div class="article-show-box">
                 <article>
                         <div class="img-box _flex">
-                            <img src="/img/example1.jpg" alt="libro">
+                            <img src="/img/uploads/products/example1.jpg" alt="libro">
                         </div>
 
                     
@@ -50,6 +50,6 @@
             
         </div>
     </div>
-        <%- include('./partials/footer') %>
+        <%- include('../partials/footer') %>
 </body>
 </html>

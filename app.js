@@ -13,12 +13,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 const productController = require('./controllers/productController')
 const mainController = require('./controllers/mainController')
 
-const filePage = {
-    login: 'login',
-    register: 'register',
-    productCart: 'productCart',
-}
-const views = ['/login', '/register', '/productCart'];
+
 
 /*ROUTES-----*/
 const rutesProduct = require('./routes/product');
@@ -32,21 +27,10 @@ app.set('view engine', 'ejs')
 //app.set('views', './caprtea-de-vistas')
 
 /*VIEWS HTML CONTROLLER*/
-app.get(views, (req, res) => {
-    switch(req.path){
-        case '/':
-            res.render('index', {products})
-            break;
-        default:
-            let page = req.path.slice(1, req.path.length)
-            res.render(filePage[page]);
-    }
 
-})
 
 app.use('/', mainRouter)
 
-//app.get('/product', productController.index);
 app.use('/product', rutesProduct)
 app.use('/user', userRouter)
 
