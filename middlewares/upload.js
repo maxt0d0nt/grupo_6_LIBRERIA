@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
                 dirUpload = 'public/img/uploads/products'
                 break
             case '/createUser':
-                dirUpload = 'public/img/uploads/user'
+                dirUpload = 'public/img/uploads/users'
                 break
             default:
                 console.log("PATH ERRONEO")
