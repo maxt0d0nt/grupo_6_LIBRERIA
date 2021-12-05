@@ -4,8 +4,9 @@ const bcrypt = require('bcrypt')
 const async = require("async");
 const userModel = require("../models/Users")
 const userFilePath = path.join(__dirname, '../data/user.json');
-const userImagesPath = path.join(__dirname, '../public'); //!TODO cambiar a img/upload/user
-const users = userModel.getData()
+const userImagesPath = path.join(__dirname, '../public');
+//!TODO cambiar a img/upload/user
+const users = userModel.getData
 const imgDir = '/img/uploads/users/'
 
 const controller = {
@@ -16,8 +17,6 @@ const controller = {
     },
     //accion de registrar un usuario
     registerUser: (req, res) => {
-        console.log(users)
-
         const path =  req.file ? imgDir + req.file.filename : ''
         const newId = userModel.creandoID()
         console.log(`REQ BODY=>`)
