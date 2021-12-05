@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt')
 const async = require("async");
-
+const userModel = require("../models/Users")
 const userFilePath = path.join(__dirname, '../data/user.json');
-const userImagesPath = path.join(__dirname, '../public'); // !TODO cambiar a img/upload/user
-const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+const userImagesPath = path.join(__dirname, '../public');
+//!TODO cambiar a img/upload/user
+const users = userModel.getData
 const imgDir = '/img/uploads/users/'
 
 const controller = {
