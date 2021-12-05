@@ -48,6 +48,41 @@
   "img": "http://placehold.it/32x32",
   "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
   "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+ },
+ {
+  "id": 6,
+  "name": "Carlos",
+  "lastName": "Rojas",
+  "userName": "crojas",
+  "email": "rojas@gmail.com",
+  "birth": "1993-11-11",
+  "address": "asdas 123",
+  "img": "/img/uploads/users/image-1638672238550.jpg",
+  "hashedPassword": null,
+  "registered": "Sun, 05 Dec 2021 02:43:58 GMT"
+ },
+ {
+  "id": 7,
+  "name": "Carlos",
+  "lastName": "Rojas",
+  "userName": "crojas",
+  "email": "rojas@gmail.com",
+  "birth": "1993-11-11",
+  "address": "asdas 123",
+  "img": "/img/uploads/users/image-1638672302710.jpg",
+  "hashedPassword": null,
+  "registered": "Sun, 05 Dec 2021 02:45:02 GMT"
+ },
+ {
+  "id": 8,
+  "name": "Carlos",
+  "lastName": "Rojas",
+  "userName": "crojas",
+  "email": "rojas@gmail.com",
+  "birth": "1993-11-11",
+  "address": "asdas 123",
+  "img": "/img/uploads/users/image-1638672327663.jpg",
+  "hashedPassword": "$2b$12$FRnEdiKhLtvP3QOsRhRzIey9l.kcyffvroc6gTwkXxq/jyHDgymtO",
+  "registered": "Sun, 05 Dec 2021 02:45:27 GMT"
  }
- 
 ]

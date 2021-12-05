@@ -17,12 +17,8 @@ const controller = {
     },
     //accion de registrar un usuario
     registerUser: (req, res) => {
-        const maxId = Number(users.reduce(function(prev, current) {
-            return (prev.id > current.id) ? prev.id : current.id
-        }))
         const path =  req.file ? imgDir + req.file.filename : ''
-        const newId = (maxId + 1).toString()
-        console.log(users)
+        const newId = userModel.creandoID()
         console.log(`REQ BODY=>`)
         // datos de formulario
         const {name, lastName, userName, email, birth, address, password, passwordRepeat} = req.body
@@ -60,8 +56,7 @@ const controller = {
             registered : formattedToday
         };
 
-        users.push(newUser)
-        fs.writeFileSync(userFilePath, JSON.stringify(users, null, ' '));
+        userModel.create(newUser)
 
 
 

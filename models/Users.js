@@ -3,7 +3,7 @@ const User = {
     fileName: './data/user.json',
 
     getData: function (){
-    return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
 
     creandoID: function(){
