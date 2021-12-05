@@ -6,11 +6,15 @@
             <%- include('../partials/menu') %>
 
             <main class="form-in">
-                <form action="/user/loginUser" target="" method="POST">
+                <form action="/user/login" target="" method="POST">
                       <h4>Ingresar</h4>
 
                       <input class="datos _w100" type="text" id="username" name="username" placeholder="Ingrese su usuario">
-
+                        <% if (locals.errors && errors.username){ %>
+                            <div class="text-danger">
+                                <%= errors.username.msg %>
+                            </div>
+                        <% } %>
                       <input class="datos _w100" type="password" id="password" name="password" placeholder="ingrese contraseña">
 
                         <p><a href="#">¿Olvidaste tu contraseña?</a></p>

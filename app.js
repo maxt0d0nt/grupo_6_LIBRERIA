@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const express = require('express-session');
 var path = require('path');
 const app = express()
 const port = 3030
@@ -8,7 +9,11 @@ const bodyParser = require("body-parser");
 
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(session({
+    secret:"ReedmeSecrets",
+    resave: false,
+    saveUninitialized:false,
+}));
 /*CONTROLLERS IMPORT */
 const productController = require('./controllers/productController')
 const mainController = require('./controllers/mainController')
@@ -19,9 +24,11 @@ const mainController = require('./controllers/mainController')
 const rutesProduct = require('./routes/product');
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
+const session = require('express-session');
 
 /*PUBLIC FILES-----*/
 app.use(express.static('public'));
+
 
 app.set('view engine', 'ejs')
 //app.set('views', './caprtea-de-vistas')
