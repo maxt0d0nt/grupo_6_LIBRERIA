@@ -8,7 +8,7 @@ router.get('/all', productController.indexPage);
 
 //Edit product
 router.get('/edit/:id', productController.edit);
-router.put('/:id', upload.single('image'), productController.update);
+router.put('/updateProduct/:id', upload.single('image'), productController.update);
 
 //Delete product
 router.delete('/:id', productController.destroy);

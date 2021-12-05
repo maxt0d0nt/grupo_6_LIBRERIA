@@ -7,6 +7,7 @@ const storage = multer.diskStorage({
         const {path} = req.route
         let dirUpload = ''
         switch (path) {
+            case '/updateProduct/:id':
             case  '/createProduct':
                 dirUpload = 'public/img/uploads/products'
                 break
@@ -14,7 +15,7 @@ const storage = multer.diskStorage({
                 dirUpload = 'public/img/uploads/users'
                 break
             default:
-                console.log("PATH ERRONEO")
+                console.log(`PATH ERRONEO ${path}. \n Se esperaban los paths (/updateProduct/:id, /createProduct, /createUser) `)
         }
         callback(null, dirUpload);
     },
