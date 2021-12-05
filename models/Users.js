@@ -31,12 +31,23 @@ const User = {
     },
 
     create: function(userData){
+    
         let allUsers = this.findAll();
-        allUsers.push(userData);
+        let newUser={
+            id:this.creandoID(),
+            ...userData
+        }
+        allUsers.push(newUser);
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers,null,' '));
-        return true;
+        return newUser;
 
     },
+    delete: function (id){
+        let allUsers = this.findAll();
+        let finalUsers = allUsers.filter(oneUser=>oneUser.id!==id);
+        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers,null,' '));
+        return true;
+    }
 
 }
 
