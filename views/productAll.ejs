@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head'),%>
+<body>
+    <div class="container">
+        <%- include('./partials/menu') %>
+        <div class="card-list _w100 _flex">
+            <div class="card__title">
+                <h1>PRODUCTOS</h1>
+            </div>
+            <div class="btn__create-product">
+                <a href="create">Crear Nuevo Producto</a>
+            </div>
+            <div class="card__carousel">
+                <ol id="style-2" class="card__books">
+                    <% products.forEach(product => { %>
+                        <li>
+                            <img class="card__img" src=<%= product.path %> alt="<%= product.name %>">
+                            <div class="card__box_buttons">
+                            <div class="card__button --edit">
+                                <a href="edit/<%= product.id %>">
+                                    Editar producto
+                                </a>
+                            </div>
+                                <form action="/product/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                    <button class="card__button --delete" type="submit">Eliminar</button>
+                                </form>
+                            </div>
+                        </li>
+                    <%});%>
+                </ol>
+            </div>
+
+        </div>
+
+
+        <%- include('./partials/footer') %>
+
+    </div>
+
+</body>
+</html>

@@ -1,52 +1,88 @@
 [
-  {
-    "id": 1,
-    "name": "Duncan",
-    "lastName": "Rogers",
-    "email": "duncanrogers@comtrek.com",
-    "address": "452 Whitty Lane, Inkerman, Nebraska, 6082",
-    "img": "http://placehold.it/32x32",
-    "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-    "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
-  },
-  {
-    "id": 2,
-    "name": "Cora",
-    "lastName": "Turner",
-    "email": "coraturner@comtrek.com",
-    "address": "797 Ralph Avenue, Greer, Iowa, 2686",
-    "img": "http://placehold.it/32x32",
-    "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-    "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
-  },
-  {
-    "id": 3,
-    "name": "Ford",
-    "lastName": "Owens",
-    "email": "fordowens@comtrek.com",
-    "address": "647 Flatlands Avenue, Cotopaxi, Arizona, 2438",
-    "img": "http://placehold.it/32x32",
-    "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-    "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
-  },
-  {
-    "id": 4,
-    "name": "Lee",
-    "lastName": "Trujillo",
-    "email": "leetrujillo@comtrek.com",
-    "address": "318 Truxton Street, Delshire, New Mexico, 7100",
-    "img": "http://placehold.it/32x32",
-    "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-    "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
-  },
-  {
-    "id": 5,
-    "name": "Oneal",
-    "lastName": "Atkins",
-    "email": "onealatkins@comtrek.com",
-    "address": "225 Beacon Court, Stewart, Florida, 7318",
-    "img": "http://placehold.it/32x32",
-    "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-    "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
-  }
+ {
+  "id": 1,
+  "name": "Duncan",
+  "lastName": "Rogers",
+  "email": "duncanrogers@comtrek.com",
+  "address": "452 Whitty Lane, Inkerman, Nebraska, 6082",
+  "img": "http://placehold.it/32x32",
+  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
+  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+ },
+ {
+  "id": 2,
+  "name": "Cora",
+  "lastName": "Turner",
+  "email": "coraturner@comtrek.com",
+  "address": "797 Ralph Avenue, Greer, Iowa, 2686",
+  "img": "http://placehold.it/32x32",
+  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
+  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+ },
+ {
+  "id": 3,
+  "name": "Ford",
+  "lastName": "Owens",
+  "email": "fordowens@comtrek.com",
+  "address": "647 Flatlands Avenue, Cotopaxi, Arizona, 2438",
+  "img": "http://placehold.it/32x32",
+  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
+  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+ },
+ {
+  "id": 4,
+  "name": "Lee",
+  "lastName": "Trujillo",
+  "email": "leetrujillo@comtrek.com",
+  "address": "318 Truxton Street, Delshire, New Mexico, 7100",
+  "img": "http://placehold.it/32x32",
+  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
+  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+ },
+ {
+  "id": 5,
+  "name": "Oneal",
+  "lastName": "Atkins",
+  "email": "onealatkins@comtrek.com",
+  "address": "225 Beacon Court, Stewart, Florida, 7318",
+  "img": "http://placehold.it/32x32",
+  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
+  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+ },
+ {
+  "id": 6,
+  "name": "Carlos",
+  "lastName": "Rojas",
+  "userName": "crojas",
+  "email": "rojas@gmail.com",
+  "birth": "1993-11-11",
+  "address": "asdas 123",
+  "img": "/img/uploads/users/image-1638672238550.jpg",
+  "hashedPassword": null,
+  "registered": "Sun, 05 Dec 2021 02:43:58 GMT"
+ },
+ {
+  "id": 7,
+  "name": "Carlos",
+  "lastName": "Rojas",
+  "userName": "crojas",
+  "email": "rojas@gmail.com",
+  "birth": "1993-11-11",
+  "address": "asdas 123",
+  "img": "/img/uploads/users/image-1638672302710.jpg",
+  "hashedPassword": null,
+  "registered": "Sun, 05 Dec 2021 02:45:02 GMT"
+ },
+ {
+  "id": 8,
+  "name": "Carlos",
+  "lastName": "Rojas",
+  "userName": "crojas",
+  "email": "rojas@gmail.com",
+  "birth": "1993-11-11",
+  "address": "asdas 123",
+  "img": "/img/uploads/users/image-1638672327663.jpg",
+  "hashedPassword": "$2b$12$FRnEdiKhLtvP3QOsRhRzIey9l.kcyffvroc6gTwkXxq/jyHDgymtO",
+  "registered": "Sun, 05 Dec 2021 02:45:27 GMT"
+ }
 ]
