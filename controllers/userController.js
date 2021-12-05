@@ -17,46 +17,9 @@ const controller = {
     },
     //accion de registrar un usuario
     registerUser: (req, res) => {
-        const path =  req.file ? imgDir + req.file.filename : ''
-        const newId = userModel.creandoID()
-        console.log(`REQ BODY=>`)
-        // datos de formulario
-        const {name, lastName, userName, email, birth, address, password, passwordRepeat} = req.body
-        console.log({name, lastName, userName, email, birth, address, password, passwordRepeat})
-
-        // encriptando Datos
-        const BCRYPT_SALT_ROUNDS = 12;
-        let hashedPass = null
-        let hashedPassword = null
-        if(password === passwordRepeat && password !== ''){
-            hashedPassword = bcrypt.hashSync(password,BCRYPT_SALT_ROUNDS)
-
-        }else(
-            console.log("Los passwords ingresados no coinciden")
-        )
-
-        console.log("-> hashedPass", {hashedPassword});
-
-        const timeElapsed = Date.now();
-        const today = new Date(timeElapsed);
-        const formattedToday = today.toUTCString()
 
 
-
-        const newUser = {
-            id:newId,
-            name,
-            lastName,
-            userName,
-            email,
-            birth,
-            address,
-            img: path,
-            hashedPassword,
-            registered : formattedToday
-        };
-
-        userModel.create(newUser)
+        userModel.create(req.body, req.file)
 
 
 

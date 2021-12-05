@@ -1,4 +1,5 @@
 const fs = require ('fs');
+const bcrypt = require('bcrypt')
 const User = {
     fileName: './data/user.json',
 
@@ -30,14 +31,47 @@ const User = {
         return userFound;
     },
 
-    create: function(userData){
-    
+    hassPassword: (password, passwordRepeat) => {
+        const BCRYPT_SALT_ROUNDS = 12;
+        let hashedPass = null
+        let hashedPassword = null
+        if(password === passwordRepeat && password !== ''){
+            return hashedPassword = bcrypt.hashSync(password,BCRYPT_SALT_ROUNDS)
+
+        }else(
+            console.log("Los passwords ingresados no coinciden")
+        )
+    },
+
+    dateNow: () => {
+        const timeElapsed = Date.now();
+        const today = new Date(timeElapsed);
+        const formattedToday = today.toUTCString()
+        return formattedToday
+    },
+
+    create: function(userData, file){
+
+        const {name, lastName, userName, email, birth, address, password, passwordRepeat} = userData
+        const imgDir = '/img/uploads/users/'
+        const path =  file ? imgDir + file.filename : ''
+
         let allUsers = this.findAll();
+
         let newUser={
             id:this.creandoID(),
-            ...userData
+            img: path,
+            registered : this.dateNow(),
+            hashedPassword: this.hassPassword(password, passwordRepeat),
+            name,
+            lastName,
+            userName,
+            email,
+            birth,
+            address
         }
         allUsers.push(newUser);
+
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers,null,' '));
         return newUser;
 
