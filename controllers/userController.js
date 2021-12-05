@@ -5,13 +5,10 @@ const async = require("async");
 const userModel = require("../models/Users")
 const userFilePath = path.join(__dirname, '../data/user.json');
 const userImagesPath = path.join(__dirname, '../public');
-//!TODO cambiar a img/upload/user
 const users = userModel.getData();
 const imgDir = '/img/uploads/users/'
 
 const controller = {
-// Root - Show all products
-    //muestra la vista de registro
     register: (req, res) => {
         res.render('./user/register');
     },
@@ -30,10 +27,7 @@ const controller = {
         //    });
         
 
-
         userModel.create(req.body, req.file)
-
-
 
         res.redirect('/user/login');
     },

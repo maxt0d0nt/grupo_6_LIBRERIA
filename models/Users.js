@@ -49,10 +49,14 @@ const User = {
         const formattedToday = today.toUTCString()
         return formattedToday
     },
+    checkUserExist: (userData)=> {
+        const {username, email} = userData
+        // TODO verifica si el usuario o email ya existen en el user.json
+    },
 
     create: function(userData, file){
-
-        const {name, lastName, userName, email, birth, address, password, passwordRepeat} = userData
+        // TODO usar checkUserExist para verificar si el usuario o email ya existen en el user.json
+        const {password, passwordRepeat, ...rest} = userData
         const imgDir = '/img/uploads/users/'
         const path =  file ? imgDir + file.filename : ''
 
@@ -63,12 +67,7 @@ const User = {
             img: path,
             registered : this.dateNow(),
             hashedPassword: this.hassPassword(password, passwordRepeat),
-            name,
-            lastName,
-            userName,
-            email,
-            birth,
-            address
+            ...rest,
         }
         allUsers.push(newUser);
 
