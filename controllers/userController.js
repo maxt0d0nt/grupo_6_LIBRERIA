@@ -1,14 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const bcrypt = require('bcrypt')
-const async = require("async");
 const userModel = require("../models/Users")
-const userFilePath = path.join(__dirname, '../data/user.json');
-const userImagesPath = path.join(__dirname, '../public');
-const users = userModel.getData();
-const imgDir = '/img/uploads/users/'
-
 const controller = {
+
     register: (req, res) => {
         res.render('./user/register');
     },
@@ -44,27 +36,28 @@ const controller = {
         res.render('./user/login');
     },
     //TODO no salen los errores
-//    loginUser: (req, res) => {
+   loginUser: (req, res) => {
 //        let userToLogin = userModel.findUserCampo('username',req.body.username);
 //        if(userToLogin){
 //            return res.send(userToLogin)
 //        }
 //        return res.render('./user/login'),{
 //            errors:{
- //               username:{
+       //               username:{
 //                    msg: 'No existe ningun usuario con ese Email.'
 //                },
 //            },
 //        };
-    //           let passwordOK = bcryptjs.compareSync(req.body.password,userToLogin.password);
-    //        if(passwordOK){
-    //          delete.UserToLogin;
-    //        req.session.userLogged = userToLogin 
-    //          return res.send ('Ok usuario logeado')
-    //    }
-    //  return res.render('./user/login'),{
-    //   errors:{
-    //     msg: 'No existe ningun usuario con ese Email.'//
+       //           let passwordOK = bcryptjs.compareSync(req.body.password,userToLogin.password);
+       //        if(passwordOK){
+       //          delete.UserToLogin;
+       //        req.session.userLogged = userToLogin
+       //          return res.send ('Ok usuario logeado')
+       //    }
+       //  return res.render('./user/login'),{
+       //   errors:{
+       //     msg: 'No existe ningun usuario con ese Email.'//
+   }
 
     };
     module.exports = controller;

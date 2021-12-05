@@ -1,13 +1,13 @@
 const express = require('express');
-const express = require('express-session');
-var path = require('path');
+const session = require('express-session')
+const path = require('path');
 const app = express()
 const port = 3030
-const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const methodOverride =  require('method-override');
 const bodyParser = require("body-parser");
 
 
-app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
     secret:"ReedmeSecrets",
@@ -18,27 +18,22 @@ app.use(session({
 const productController = require('./controllers/productController')
 const mainController = require('./controllers/mainController')
 
-
-
 /*ROUTES-----*/
 const rutesProduct = require('./routes/product');
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
-const session = require('express-session');
 
 /*PUBLIC FILES-----*/
 app.use(express.static('public'));
 
-
+/*SETTINGS-------*/
 app.set('view engine', 'ejs')
 //app.set('views', './caprtea-de-vistas')
-
-/*VIEWS HTML CONTROLLER*/
-
 
 app.use('/', mainRouter)
 
 app.use('/product', rutesProduct)
+
 app.use('/user', userRouter)
 
 
