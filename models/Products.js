@@ -70,9 +70,7 @@ const Products = {
     },
 
     delete: function (productId){
-        console.log("-> productId", productId);
         let allProducts = this.findAll();
-        console.log("-> allProducts", allProducts);
 
         const productKey = allProducts.findIndex((p) => p.id == productId);
         const pathDeleteImage = path.join(__dirname,`../public/${allProducts[productKey].path}`)

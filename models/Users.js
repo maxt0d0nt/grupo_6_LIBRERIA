@@ -27,10 +27,7 @@ const User = {
     },
     findUserCampo: function(campo, texto){
         let allUsers = this.findAll();
-        console.log("-> allUsers", allUsers);
         let userFound = allUsers.find(oneUser=> oneUser[campo] === texto);
-        console.log("-> texto", texto);
-        console.log("-> campo", campo);
         return userFound;
     },
 
@@ -92,4 +89,3 @@ const User = {
 }
 
 module.exports = User; 
-console.log(User.creandoID());
