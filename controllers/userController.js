@@ -6,20 +6,21 @@ const controller = {
     },
     //accion de registrar un usuario
     registerUser: (req, res) => {
-        //TODO Rechazar Usuario registrado MIN 57 del video aprox.
-        //let userInDB = userModel.findUserCampo('email',req.body.email);
-        //if(userInDB){
-        //    return res.render('register'{
-        //        errors:{
-        //            email:{
-        //                msg: 'Ya existe un usuario asociado a ese Email.'
-        //            }
-        //        },
-        //        oldData:req.body   
-        //    });
-        
 
-        userModel.create(req.body, req.file)
+        let userInDB = userModel.findUserCampo('email', req.body.email)
+        if(userInDB){
+            return res.render('./user/register',{
+                errors: {
+                    email: {
+                        msg: 'Este email ya esta registrado'
+                    }
+                },
+                oldData: req.body
+            })
+        }else{
+            userModel.create(req.body, req.file)
+        }
+
 
         res.redirect('/user/login');
     },
@@ -37,27 +38,35 @@ const controller = {
     },
     //TODO no salen los errores
    loginUser: (req, res) => {
-//        let userToLogin = userModel.findUserCampo('username',req.body.username);
-//        if(userToLogin){
-//            return res.send(userToLogin)
-//        }
-//        return res.render('./user/login'),{
-//            errors:{
-       //               username:{
-//                    msg: 'No existe ningun usuario con ese Email.'
-//                },
-//            },
-//        };
-       //           let passwordOK = bcryptjs.compareSync(req.body.password,userToLogin.password);
-       //        if(passwordOK){
-       //          delete.UserToLogin;
-       //        req.session.userLogged = userToLogin
-       //          return res.send ('Ok usuario logeado')
-       //    }
-       //  return res.render('./user/login'),{
-       //   errors:{
-       //     msg: 'No existe ningun usuario con ese Email.'//
-   }
+        let userToLogin = userModel.findUserCampo('userName', req.body.userName)
+       if(userToLogin){
+           let isOkPassword = userModel.cmopareSync(req.body.password, userToLogin.hashedPassword)
+           if(isOkPassword){
+               req.session.userLogged = userToLogin
+               delete userToLogin.hashedPassword
+               return res.redirect('/user/profile');
+           }
+
+       }
+
+       return res.render('./user/login',{
+           errors: {
+               email: {
+                   msg: 'Usuario o contraseña invalidos!'
+               }
+           }
+       })
+   },
+    logout: (req, res) => {
+        req.session.destroy()
+        return res.redirect('/')
+    },
+    profile: (req, res) => {
+        return res.render('./user/profile',{
+            user: req.session.userLogged
+        })
+    }
 
     };
+
     module.exports = controller;

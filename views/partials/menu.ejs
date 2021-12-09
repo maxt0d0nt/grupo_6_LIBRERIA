@@ -4,17 +4,29 @@
         <div class="menu__icon">Re@dme</div>
         <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="/product/cart">Mis Compras</a></li>
+
             <li><a href="#">Productos</a></li>
             <li><a href="/user/login">Login</a></li>
             <li><a href="/user/register">Register</a></li>
-            <li><a href="/product/all">CRUD</a></li>
+            <% if(locals.userLogged) {%>
+             <li><a href="/product/cart">Mis Compras</a></li>
+             <li><a href="/product/all">CRUD</a></li>
+            <% } %>
         </ol>
         <div class="search menu__search_box">
             <input type="search" placeholder="Search here">
             <span class="fa fa-search"></span>
-            <a href="/login"><i class="fas fa-user-circle menu__avatar"></i></a>
-            <p><a href="/login">Usuario</a></p>
+            <% if(locals.userLogged) {%>
+                <a href="/user/login"><img src="<%= locals.userLogged.img %>" class="menu__avatar"></a>
+                <div class="menu__avatar_logout-box">
+                    <p><a href="/user/login">Hi <%= locals.userLogged.name %> <%= locals.userLogged.lastName %></a></p>
+                    <p class="logout"><a href="/user/logout">Logout</a></p>
+                </div>
+            <% } %>
+            <% if(!locals.userLogged) {%>
+                <a href="/user/login"><i class="fas fa-user-circle menu__avatar"></i></a>
+                <p><a href="/user/login">Hi guest</a></p>
+            <% } %>
         </div>
         <label for="check" class="menu__bar">
             <span class="fa fa-bars" id="menu__bars"></span>

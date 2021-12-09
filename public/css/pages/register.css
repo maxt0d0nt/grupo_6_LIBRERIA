@@ -2,6 +2,11 @@
 @import "/css/rootStyles.css";
 @import "/css/layout/homeMenu.css";
 
+.text-danger {
+    color: #ffffff;
+    font-size: 13px;
+    font-style: oblique;
+}
 
 input[type="submit"]{
 	padding:8px 16px;

@@ -3,16 +3,18 @@ const router = express.Router()
 const userController = require('../controllers/userController');
 const upload = require('../middlewares/upload');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 router.get('/login',guestMiddleware ,userController.login);
-router.post('/login', userController.loginUser);
+//process
+router.post('/loginUser', userController.loginUser);
 
 router.get('/register',guestMiddleware ,userController.register);
 router.post('/createUser', upload.single('image'), userController.registerUser);
 
-router.post('/loginUser', userController.loginUser);
+router.get('/profile', authMiddleware, userController.profile);
 
-//post de los datos + multer con imagen
-    //registrar el usuario en data/user.json
+router.get('/logout', authMiddleware, userController.logout);
+
 
 module.exports = router;

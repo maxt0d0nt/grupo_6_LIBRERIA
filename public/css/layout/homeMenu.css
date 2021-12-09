@@ -48,7 +48,6 @@
     display: flex;
     margin: auto 0;
     height: 35px;
-    line-height: 35px;
     align-items: center;
     margin-left: 10px;
 }
@@ -94,11 +93,21 @@
     padding: 11px;
     display: flex;
     align-items: center;
-    margin-left: 15px
+    margin-left: 15px;
+    height: 57px;
+    border-radius: 100px;
+    width: 57px;
+    object-fit: fill;
 }
 .menu nav .menu__avatar p{
     font-size: 9px;
     padding: 8px;
+
+}
+
+.logout{
+    font-style: italic;
+    font-weight: bold;
 }
 
 .menu nav .menu__bar{
