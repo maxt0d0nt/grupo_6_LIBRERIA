@@ -24,19 +24,9 @@ const controller = {
 
         res.redirect('/user/login');
     },
-    store: (req, res) => {
-        //guardar usuario !TODO
-    },
-    edit: (req, res) => {
-        //editar usuario !TODO
-    },
-    delete: (req, res) => {
-        //borrar usuario !TODO
-    },
     login: (req, res) => {
         res.render('./user/login');
     },
-    //TODO no salen los errores
    loginUser: (req, res) => {
         let userToLogin = userModel.findUserCampo('userName', req.body.userName)
        if(userToLogin){
@@ -44,7 +34,7 @@ const controller = {
            if(isOkPassword){
                req.session.userLogged = userToLogin
                delete userToLogin.hashedPassword
-               return res.redirect('/user/profile');
+               return res.redirect('/');
            }
 
        }
