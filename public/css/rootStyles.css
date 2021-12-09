@@ -21,6 +21,11 @@
     flex-wrap: wrap;
 }
 
+._center {
+    display: flex;
+    justify-content: center;
+}
+
 ._w100{
     width: 100%;
 }

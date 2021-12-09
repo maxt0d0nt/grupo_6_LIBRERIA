@@ -16,7 +16,9 @@
                         <input class="datos _w100" type="text" id="lastName" name="lastName" placeholder="Ingrese su Apellido">
 
                         <input class="datos _w100" type="text" id="userName" name="userName" placeholder="Ingrese su nombre de usuario">
-
+                        <% if(locals.errors && errors.email) {%>
+                            <div class="text-danger"><%= errors.email.msg %>!</div>
+                        <% } %>
                         <input class="datos _w100" type="email" id="email" name="email"
                         placeholder="Ingrese su correo electronico">
 

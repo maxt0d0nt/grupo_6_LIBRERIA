@@ -1,52 +1,26 @@
 [
  {
   "id": 1,
-  "name": "Duncan",
-  "lastName": "Rogers",
-  "email": "duncanrogers@comtrek.com",
-  "address": "452 Whitty Lane, Inkerman, Nebraska, 6082",
-  "img": "http://placehold.it/32x32",
-  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+  "img": "/img/uploads/users/image-1638934755503.jpg",
+  "registered": "Wed, 08 Dec 2021 03:39:15 GMT",
+  "hashedPassword": "$2b$12$IoNE5fIipSpakaHCoBErX..t8SpK8I1eVK679kiwnYFBAkA1ZSh9K",
+  "name": "Nicolas",
+  "lastName": "Portesio",
+  "userName": "username1",
+  "email": "nicolas.lp.30@gmail.com",
+  "birth": "1111-11-11",
+  "address": "Fracisco Guiraudo 336"
  },
  {
   "id": 2,
-  "name": "Cora",
-  "lastName": "Turner",
-  "email": "coraturner@comtrek.com",
-  "address": "797 Ralph Avenue, Greer, Iowa, 2686",
-  "img": "http://placehold.it/32x32",
-  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
- },
- {
-  "id": 3,
-  "name": "Ford",
-  "lastName": "Owens",
-  "email": "fordowens@comtrek.com",
-  "address": "647 Flatlands Avenue, Cotopaxi, Arizona, 2438",
-  "img": "http://placehold.it/32x32",
-  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
- },
- {
-  "id": 4,
-  "name": "Lee",
-  "lastName": "Trujillo",
-  "email": "leetrujillo@comtrek.com",
-  "address": "318 Truxton Street, Delshire, New Mexico, 7100",
-  "img": "http://placehold.it/32x32",
-  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
- },
- {
-  "id": 5,
-  "name": "Oneal",
-  "lastName": "Atkins",
-  "email": "onealatkins@comtrek.com",
-  "address": "225 Beacon Court, Stewart, Florida, 7318",
-  "img": "http://placehold.it/32x32",
-  "hashedPassword": "$2b$12$5lU4Ah3NoSLLCtQWeHqcDegh7ZTf0RvF8N.wehG1Unnw57P6laRSW",
-  "registered": "Fri, 03 Dec 2021 04:26:06 GMT"
+  "img": "/img/uploads/users/image-1639012326310.jpg",
+  "registered": "Thu, 09 Dec 2021 01:12:06 GMT",
+  "hashedPassword": "$2b$12$Ho1GkWXK2xtTPCcbgLaTXO9GqH1ezmz1LcGe2ur00xiF5OPMTUHom",
+  "name": "Bruno",
+  "lastName": "Portesio",
+  "userName": "bruno1",
+  "email": "bruno@gmail.com",
+  "birth": "1111-11-11",
+  "address": "Fracisco Guiraudo 336"
  }
 ]

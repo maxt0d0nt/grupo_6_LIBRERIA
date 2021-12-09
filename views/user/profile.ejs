@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head',{cssStyle:'/css/pages/profile.css'}) %>
+    <body>
+        <div class="container">
+            <%- include('../partials/menu') %>
+
+            <main class="profile">
+                <div class="_w100">
+                    <h1 class="_w100 _center profile__title">AVATAR</h1>
+                </div>
+                <div class="_w100 _center">
+                    <img class="profile__img" src="<%= user.img %>" alt="">
+                </div>
+                <div class="_w100 _center">
+                    <p class="profile__label">Username:</p>
+                    <p class="profile__value"><%= user.userName %></p>
+                </div>
+                <div class="_w100 _center">
+                    <p class="profile__label">Name:</p>
+                    <p class="profile__value"><%= user.name %></p>
+                </div>
+                <div class="_w100 _center">
+                    <p class="profile__label">LastName:</p>
+                    <p class="profile__value"><%= user.lastName %></p>
+                </div>
+                <div class="_w100 _center">
+                    <p class="profile__label">Address:</p>
+                    <p class="profile__value"><%= user.address %></p>
+                </div>
+                <div class="_w100 _center">
+                    <p class="profile__label">Email:</p>
+                    <p class="profile__value"><%= user.email %></p>
+                </div>
+                <div class="_w100 _center">
+                    <p class="profile__label">Birth:</p>
+                    <p class="profile__value"><%= user.birth %></p>
+                </div>
+            </main>
+       </div>
+    </body>
+</html>

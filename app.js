@@ -5,6 +5,7 @@ const app = express()
 const port = 3030
 const methodOverride =  require('method-override');
 const bodyParser = require("body-parser");
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 
 app.use(methodOverride('_method'));
@@ -14,6 +15,9 @@ app.use(session({
     resave: false,
     saveUninitialized:false,
 }));
+
+app.use(userLoggedMiddleware);
+
 /*CONTROLLERS IMPORT */
 const productController = require('./controllers/productController')
 const mainController = require('./controllers/mainController')

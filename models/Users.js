@@ -25,9 +25,12 @@ const User = {
         let userFound = allUsers.find(oneUser=> oneUser.id === id);
         return userFound;
     },
-    findUserCampo: function(campo,texto){
+    findUserCampo: function(campo, texto){
         let allUsers = this.findAll();
+        console.log("-> allUsers", allUsers);
         let userFound = allUsers.find(oneUser=> oneUser[campo] === texto);
+        console.log("-> texto", texto);
+        console.log("-> campo", campo);
         return userFound;
     },
 
@@ -41,6 +44,10 @@ const User = {
         }else(
             console.log("Los passwords ingresados no coinciden")
         )
+    },
+
+    cmopareSync: (password, passwordInDB) => {
+        return bcrypt.compareSync(password, passwordInDB)
     },
 
     dateNow: () => {
