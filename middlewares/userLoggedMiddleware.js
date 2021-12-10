@@ -1,3 +1,4 @@
+//Create local var if user is logged in true or false if not logged
 function userLoggedMiddleware(req,res,next){
     res.locals.isLogged = false
     if(req.session.userLogged){

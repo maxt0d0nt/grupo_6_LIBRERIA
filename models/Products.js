@@ -5,10 +5,12 @@ const Products = {
     imgDir: '/img/uploads/products/',
 
     getData: function (){
+        //get all products
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
 
     creandoID: function(){
+        //create incremental ID
         let allProducts = this.findAll();
         let lastProduct = allProducts.pop();
         if(lastProduct){
@@ -18,10 +20,12 @@ const Products = {
     },
 
     findAll: function(){
+        //get all products
         return this.getData();
     },
 
     dateNow: () => {
+        //Obtain date formatted
         const timeElapsed = Date.now();
         const today = new Date(timeElapsed);
         const formattedToday = today.toUTCString()
@@ -29,6 +33,7 @@ const Products = {
     },
 
     create: function(productData, file){
+        //create a new product add push to products JSON
         const path =  file ? this.imgDir + file.filename : ''
 
         let allProducts = this.findAll();
@@ -47,6 +52,7 @@ const Products = {
     },
 
     deletePrevImage: (productPath) => {
+        //remove prev image to save place
         const pathDeletePrevImage = path.join(__dirname,`../public/${productPath}`)
         fs.unlinkSync(pathDeletePrevImage)
     },

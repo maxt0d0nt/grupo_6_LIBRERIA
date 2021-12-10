@@ -25,6 +25,7 @@ const User = {
         let userFound = allUsers.find(oneUser=> oneUser.id === id);
         return userFound;
     },
+
     findUserCampo: function(campo, texto){
         let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser=> oneUser[campo] === texto);
@@ -53,6 +54,7 @@ const User = {
         const formattedToday = today.toUTCString()
         return formattedToday
     },
+
     checkUserExist: (userData)=> {
         const {username, email} = userData
         // TODO verifica si el usuario o email ya existen en el user.json

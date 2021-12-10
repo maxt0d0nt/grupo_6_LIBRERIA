@@ -1,10 +1,10 @@
 const userModel = require("../models/Users")
 const controller = {
-
+    //Register page
     register: (req, res) => {
         res.render('./user/register');
     },
-    //accion de registrar un usuario
+    //Register() user process
     registerUser: (req, res) => {
 
         let userInDB = userModel.findUserCampo('email', req.body.email)
@@ -24,9 +24,12 @@ const controller = {
 
         res.redirect('/user/login');
     },
+
+    //Login page
     login: (req, res) => {
         res.render('./user/login');
     },
+    //Login() user process
    loginUser: (req, res) => {
         let userToLogin = userModel.findUserCampo('userName', req.body.userName)
        if(userToLogin){
@@ -47,10 +50,12 @@ const controller = {
            }
        })
    },
+    //Logout() user process
     logout: (req, res) => {
         req.session.destroy()
         return res.redirect('/')
     },
+    //Profile page
     profile: (req, res) => {
         return res.render('./user/profile',{
             user: req.session.userLogged

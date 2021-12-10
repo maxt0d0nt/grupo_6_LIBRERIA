@@ -5,15 +5,20 @@ const upload = require('../middlewares/upload');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+//page => Login
 router.get('/login',guestMiddleware ,userController.login);
-//process
+//() => Login
 router.post('/loginUser', userController.loginUser);
 
+//page => Register
 router.get('/register',guestMiddleware ,userController.register);
+//() => Process register
 router.post('/createUser', upload.single('image'), userController.registerUser);
 
+//page => Profile
 router.get('/profile', authMiddleware, userController.profile);
 
+//page => Logout
 router.get('/logout', authMiddleware, userController.logout);
 
 

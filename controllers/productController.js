@@ -5,11 +5,11 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
-// Root - Show all products
+    //Index page - Show all products
     indexPage: (req, res) => {
         res.render('./product/productAll', { products });
     },
-
+    //Buy product page
     cartPage:(req, res) => {
         res.render('./product/productCart');
     },
@@ -24,33 +24,33 @@ const controller = {
         })
     },
 
-    // Create - Form to create
+    // Create product page - Form to create product
     create: (req, res) => {
         res.render('./product/productCreate');
     },
 
-    // Create -  Method to store
+    // Create() -  Method to store
     store: (req, res) => {
         productModel.create(req.body, req.file)
 
         res.redirect('/product/all');
     },
 
-    // Update - Form to edit
+    // Update - Form to edit product
     edit: (req, res) => {
         const productId =  parseInt(req.params.id)
         const productToEdit = products.filter(p => p.id === productId)
 
         res.render('./product/productEdit',{productToEdit:productToEdit[0]})
     },
-    // Update - Method to update
+    // Update() - Method to update product
     update: (req, res) => {
         const id = parseInt(req.params.id)
         productModel.edit(id, req.body, req.file)
         res.redirect('/product/all');
     },
 
-    // Delete - Delete one product from DB -
+    // Delete() - Delete one product from DB
     destroy: (req, res) => {
         const productId = parseInt(req.params.id)
         productModel.delete(productId)

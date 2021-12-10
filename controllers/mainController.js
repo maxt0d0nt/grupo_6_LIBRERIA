@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -19,12 +18,6 @@ const controller = {
       return condition;
     });
 
-    /**
-     * Parametros:
-     *  1. nombre de la vista
-     *  2. Objeto donde cada propiedad es una variable dentro
-     *     del archivo ejs
-     */
     res.render('index', {
         productsBestSeller,
         productsPomotions

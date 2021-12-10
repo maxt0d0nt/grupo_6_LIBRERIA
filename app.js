@@ -7,7 +7,10 @@ const methodOverride =  require('method-override');
 const bodyParser = require("body-parser");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
+//SETTINGS-------
+app.set('view engine', 'ejs')
 
+// => Session
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
@@ -16,24 +19,21 @@ app.use(session({
     saveUninitialized:false,
 }));
 
+// => Middleware
 app.use(userLoggedMiddleware);
 
-/*CONTROLLERS IMPORT */
-const productController = require('./controllers/productController')
-const mainController = require('./controllers/mainController')
 
-/*ROUTES-----*/
+// => Public file
+app.use(express.static('public'));
+
+//ROUTES-------
 const rutesProduct = require('./routes/product');
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
 
-/*PUBLIC FILES-----*/
-app.use(express.static('public'));
 
-/*SETTINGS-------*/
-app.set('view engine', 'ejs')
-//app.set('views', './caprtea-de-vistas')
 
+//___MAIN___
 app.use('/', mainRouter)
 
 app.use('/product', rutesProduct)
