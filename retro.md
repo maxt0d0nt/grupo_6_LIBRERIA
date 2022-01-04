@@ -36,3 +36,18 @@
         no se realizo retro
     #Sprint 4
         Acumular pendientes para ultimo momento
+
+        #### Sprint 6
+ 
+ #### Que hicimos:
+ 
+ * Una reunion temprana para asignar las tareas a los miembros del grupo.
+
+ #### En que nos complicamos:
+
+* 
+
+#### Que vamos a hacer:
+
+* Poder llegar a tiempo con las tareas asignadas para poder realizar un preview a tiempo y asi corregir errores o mejorar algunos puntos.
+* Verificar entre todos la funcionalidad de la pagina.
