@@ -1,0 +1,52 @@
+CREATE TABLE `author` (
+  `id` <type>,
+  `name` <type>,
+  `lastName` <type>,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `user-client` (
+  `id_usuario` <type>,
+  `name` <type>,
+  `lastName` <type>,
+  `userName` <type>,
+  `address` <type>,
+  `hashedPassword` <type>,
+  `id_libros` <type>,
+  `birth` <type>,
+  PRIMARY KEY (`id_usuario`)
+);
+
+CREATE TABLE `venta` (
+  `id_ventas` <type>,
+  `id_usuario` <type>,
+  `id_libro` <type>,
+  PRIMARY KEY (`id_ventas`),
+  FOREIGN KEY (`id_usuario`) REFERENCES `user-client`(`id_usuario`)
+);
+
+CREATE TABLE `category` (
+  `id` <type>,
+  `literatureCategory` <type>,
+  `ecomerceCategory` <type>,
+  `description` <type>,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product` (
+  `id_libro` <type>,
+  `name` <type>,
+  `price` <type>,
+  `author` <type>,
+  PRIMARY KEY (`id_libro`),
+  FOREIGN KEY (`id_libro`) REFERENCES `venta`(`id_libro`),
+  FOREIGN KEY (`id_libro`) REFERENCES `category`(`id`)
+);
+
+CREATE TABLE `genero` (
+  `id_genero` <type>,
+  `nombre_genero` <type>,
+  PRIMARY KEY (`id_genero`),
+  FOREIGN KEY (`id_genero`) REFERENCES `author`(`id`)
+);
+
