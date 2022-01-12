@@ -56,7 +56,7 @@
 
  #### En que nos complicamos:
 
-* 
+* coordinar los horarios de reuniones, poder desenvolverse con mas practicidad en las tareas asignadas y mejorar la comunicacion.
 
 #### Que vamos a hacer:
 
