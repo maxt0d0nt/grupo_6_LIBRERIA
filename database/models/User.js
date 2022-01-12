@@ -20,13 +20,13 @@ module.exports = function (sequelize, dataTypes){
       type: dataTypes.STRING
     },
     address:{
-      type: dataTypes.STRING
+      type: dataTypes.TEXT
     },
     hashedPassword:{
       type: dataTypes.STRING
     },
     birth:{
-      type: dataTypes.STRING
+      type: dataTypes.DATE
     }
   }
 

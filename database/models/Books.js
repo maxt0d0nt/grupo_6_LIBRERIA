@@ -8,16 +8,25 @@ module.exports = function (sequelize, dataTypes){
       autoIncrement: true
     },
     name:{
+      type: dataTypes.STRING
+    },
+    price:{
+      tpye: dataTypes.FLOAT
+
+    },
+    author:{
       tpye: dataTypes.STRING
     },
-    price:{},
-    author:{},
-    literatureCategory:{},
-    ecomerceCategory:{}
+    literatureCategory:{
+      tpye: dataTypes.STRING
+    },
+    ecomerceCategory:{
+      tpye: dataTypes.STRING
+    }
   }
 
   let config = {
-    tableName: "products",
+    tableName: "product",
     timestamps:false
   }
 
