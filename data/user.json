@@ -22,5 +22,28 @@
   "email": "bruno@gmail.com",
   "birth": "1111-11-11",
   "address": "Fracisco Guiraudo 336"
+ },
+ {
+  "id": 3,
+  "img": "",
+  "registered": "Wed, 05 Jan 2022 00:16:35 GMT",
+  "hashedPassword": "$2b$12$k/76w7ufGqfT6qAoqht17OVjgKaxI9X7J6SFnhfs5LHLxTd2FmZSq",
+  "name": "nico",
+  "lastName": "port",
+  "userName": "nico",
+  "email": "nicolas@gmail.com",
+  "birth": "",
+  "address": ""
+ },
+ {
+  "id": 4,
+  "img": "",
+  "registered": "Wed, 05 Jan 2022 00:17:18 GMT",
+  "name": "nico",
+  "lastName": "port",
+  "userName": "nico",
+  "email": "nico@gmail.com",
+  "birth": "",
+  "address": ""
  }
 ]
