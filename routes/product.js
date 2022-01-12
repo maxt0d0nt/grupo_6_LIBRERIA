@@ -24,7 +24,7 @@ router.post('/createProduct', upload.single('image'), productController.store);
 router.get('/detail/:id', productController.detail);
 
 //page => Product Cart
-router.get('/cart', authMiddleware,productController.cartPage)
+router.get('/cart', authMiddleware,productController.cartPage);
 
 
 module.exports = router;

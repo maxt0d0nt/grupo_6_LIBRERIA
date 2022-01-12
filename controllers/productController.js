@@ -3,11 +3,14 @@ const path = require('path');
 const productModel = require('../models/Products')
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+const db= require ("../database/models");
 const controller = {
     //Index page - Show all products
     indexPage: (req, res) => {
-        res.render('./product/productAll', { products });
+        db.Libros.findAll()
+        .then(function(libros){
+            res.render('./product/productAll',{libros:libros})
+        })
     },
     //Buy product page
     cartPage:(req, res) => {
@@ -16,44 +19,71 @@ const controller = {
 
     // Detail - Detail from one product
     detail: (req, res) => {
-        const productId = parseInt(req.params.id);
-        const productKey = products.map(p => p.id).indexOf(productId)
-        res.render('./product/productDetail',{
-            productSelected: products[productKey],
-            productPromotion: products.filter(p => p.ecomerceCategory === 'promotion')
+        db.Libro.findByPk(req.params.id,{
+            include: [{association:"genero"},{association:"autores"}]
+        })
+        .then(function(libro){
+            res.render('./product/productDetail.ejs',{libro:libro});
         })
     },
 
     // Create product page - Form to create product
     create: (req, res) => {
-        res.render('./product/productCreate');
+        db.Genero.findAll()
+        .then(function(generos){
+            return res.render('./product/productCreate', {generos:generos})
+        });
     },
+    
 
     // Create() -  Method to store
     store: (req, res) => {
-        productModel.create(req.body, req.file)
+        db.Libro.create({
+            name:req.body.name,
+            author:req.body.author,
+            description:req.body.description,
+            literatureCategory:req.body.literatureCategory,
+            ecomerceCategory:req.body.ecomerceCategory,
+        });
 
         res.redirect('/product/all');
     },
 
     // Update - Form to edit product
     edit: (req, res) => {
-        const productId =  parseInt(req.params.id)
-        const productToEdit = products.filter(p => p.id === productId)
+        let pedidoLibro = db.Libro.findByPk(req.params.id);
+        let pedidoGeneros = db.Genero.findAll();
+        Promise.all([pedidoLibro, pedidoGeneros])
+        .then (function([libro,generos]){
+            res.render('./product/productEdit',{libro:libro, generos:generos});
+        })
 
-        res.render('./product/productEdit',{productToEdit:productToEdit[0]})
+       
     },
     // Update() - Method to update product
-    update: (req, res) => {
-        const id = parseInt(req.params.id)
-        productModel.edit(id, req.body, req.file)
-        res.redirect('/product/all');
-    },
+    update: (req, res) => 
+        db.Libro.update({
+        name:req.body.name,
+        author:req.body.author,
+        description:req.body.description,
+        literatureCategory:req.body.literatureCategory,
+        ecomerceCategory:req.body.ecomerceCategory,
+        }, {
+            where:{
+                id: req.params.id
+            }
+        });
+        
+        res.redirect('/product/'+req.params.id)
+    }
 
     // Delete() - Delete one product from DB
-    destroy: (req, res) => {
-        const productId = parseInt(req.params.id)
-        productModel.delete(productId)
+        destroy: (req, res) => {
+        db.Libro.destroy({
+            where:{
+                id: req.params.id
+            }
+        })
 
         res.redirect('/product/all');
     }

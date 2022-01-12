@@ -19,17 +19,11 @@
                 <label for="literatureCategory">Literature Category:</label>
 
                 <select id="literatureCategory" name="literatureCategory">
-                    <option value="">N/A</option>
-                    <option value="terror">terror</option>
-                    <option value="suspenso">suspenso</option>
-                    <option value="biografia">biografia</option>
-                    <option value="novela">novela</option>
-                    <option value="policial">policial</option>
-                    <option value="ciencia">ciencia</option>
-                    <option value="religion">religion</option>
-                    <option value="cuentos infantiles">cuentos infantiles</option>
-                    <option value="programacion">programacion</option>
-                    <option value="salud">salud</option>
+                    <% for (let i=0; i< generos.length; i++){ %>
+                         <option value="<%=generos[i].id%>">
+                             <%=generos[i].name%>
+                        </option>
+                        <%}%>
                 </select><br><br>
 
                 <label for="ecomerceCategory">Ecomerce Category:</label>
