@@ -5,7 +5,7 @@ const upload = require('../middlewares/upload');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 //page =>  CRUD Products
-router.get('/all', authMiddleware,productController.indexPage);
+router.get('/all', authMiddleware, productController.indexPage);
 
 //page => Edit product
 router.get('/edit/:id', authMiddleware,productController.edit);
