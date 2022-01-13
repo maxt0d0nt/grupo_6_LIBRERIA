@@ -62,3 +62,18 @@
 
 * Poder llegar a tiempo con las tareas asignadas para poder realizar un preview a tiempo y asi corregir errores o mejorar algunos puntos.
 * Verificar entre todos la funcionalidad de la pagina.
+
+#### Keep doing:
+* Las reuniones para asignar las consignas.
+
+#### Start doing:
+* Trabajar con mas tiempo antes del cierre del sprint.
+
+#### Stop doing:
+* No repasar conceptos puntuales a desarrollar y practica al momento de codear.
+
+#### More of:
+* Comunicarnos en el grupo de slack.
+
+#### Less of:
+* No aclarar dudas del trabajo en equipo.
