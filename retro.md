@@ -77,3 +77,21 @@
 
 #### Less of:
 * No aclarar dudas del trabajo en equipo.
+
+
+        #### Sprint 7
+
+#### Keep doing:
+* 
+
+#### Start doing:
+* 
+
+#### Stop doing:
+* 
+
+#### More of:
+* 
+
+#### Less of:
+* 
