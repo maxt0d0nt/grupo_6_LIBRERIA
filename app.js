@@ -31,15 +31,12 @@ const rutesProduct = require('./routes/product');
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
 
-
-
 //___MAIN___
 app.use('/', mainRouter)
 
 app.use('/product', rutesProduct)
 
 app.use('/user', userRouter)
-
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

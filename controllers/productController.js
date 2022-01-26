@@ -3,6 +3,7 @@ const path = require('path');
 const productModel = require('../models/Products')
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const db = require ("../database/models");
 
 const controller = {
     //Index page - Show all products

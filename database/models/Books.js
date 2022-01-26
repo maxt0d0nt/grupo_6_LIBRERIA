@@ -5,7 +5,8 @@ module.exports = function (sequelize, dataTypes){
     id:{
       type: dataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      allowNull: false
     },
     name:{
       type: dataTypes.STRING
@@ -30,7 +31,14 @@ module.exports = function (sequelize, dataTypes){
     timestamps:false
   }
 
-  let Books = sequelize.define(alias, cols, config)
+  let Books = sequelize.define(alias, cols, config);
 
-  return Books
+  Books.associate = function(models) {
+    Books.belongTo(models.gender, {
+      as: "productos",
+      through: "product_id",
+      foreignKey: "gender_id"
+    });
+
+}  return Books;
 }

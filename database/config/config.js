@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "monitor1234",
-    "database": "books_db",
+    "password": null,
+    "database": "readme",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

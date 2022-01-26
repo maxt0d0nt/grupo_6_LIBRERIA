@@ -18,7 +18,14 @@ module.exports = function (sequelize, dataTypes){
     timestamps:false
   }
 
-  let Gender = sequelize.define(alias, cols, config)
+  let Gender = sequelize.define(alias, cols, config);
+
+  Gender.associate = function(models) {
+    Gender.hasMany(models.Books, {
+      as: "products",
+      foreignKey: gender_id
+    })
+  
 
   return Gender
 }
