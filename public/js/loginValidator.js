@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-    
+
     let title = document.querySelector("input #username")
     title.focus();
 
@@ -14,10 +14,14 @@ window.addEventListener("load", () => {
 
         if (usuario.value == ""){
             errors.push("el nombre es obligatorio")
+        } else if (usuario.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (password.value == ""){
             errors.push("contraseña obligatoria")
+        } else if (password.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
             if (errors.length > 0){

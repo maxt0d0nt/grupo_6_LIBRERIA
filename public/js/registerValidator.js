@@ -21,20 +21,29 @@ window.addEventListener("load", () => {
         if (usuarioNombre.value == ""){
             errors.push("el nombre es obligatorio")
             
-        };
+        } else if (usuarioNombre.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
+        }
+        ;
 
-        if (usuarioNombre.value == ""){
+        if (usuarioApellido.value == ""){
             errors.push("el Apellido es obligatorio")
             
+        } else if (usuarioApellido.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (usuario.value == ""){
         errors.push("el nombre del usuario es obligatorio")
+        } else if (usuario.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (mail.value == ""){
             errors.push("el correo es obligatorio")
             
+        }else if (mail.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (fecha.value == ""){
@@ -49,10 +58,14 @@ window.addEventListener("load", () => {
 
         if (contraseña.value == ""){
             errors.push("contraseña obligatoria")
+        }else if (contraseña.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (contraseñaRepetir.value == ""){
             errors.push("contraseña obligatoria")
+        }else if (contraseñaRepetir.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
             if (errors.length > 0){

@@ -16,15 +16,21 @@ window.addEventListener("load", () => {
         if (productoNombre.value == ""){
             errors.push("el nombre es obligatorio")
             
+        } else if (productoNombre.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (author.value == ""){
             errors.push("el autor es obligatorio")
             
+        } else if (author.value.length < 3) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (descripcion.value == ""){
         errors.push("Por favor coloque la descripcion del producto")
+        } else if (descripcion.value.length < 5) {
+            errors.push("este campo debe contener al menos 3 caracteres")
         };
 
       
