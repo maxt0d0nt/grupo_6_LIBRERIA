@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head',{cssStyle:'/css/pages/register.css'}) %>
+    <script src="/public/js/registerValidator.js"></script>
 <body>
 
     <div class="container">
@@ -11,7 +12,7 @@
                     <form action="/user/createUser" method="POST" enctype="multipart/form-data">
                         <h4>Registro de Usuario</h4>
 
-                        <input class="datos _w100" type="text" id="name" name="name" placeholder="Ingrese Nombre">
+                        <input class="datos _w100" type="text" id="name" name="name" placeholder="Ingrese su Nombre">
 
                         <input class="datos _w100" type="text" id="lastName" name="lastName" placeholder="Ingrese su Apellido">
 
