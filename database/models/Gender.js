@@ -1,13 +1,13 @@
-module.exports = function (sequelize, dataTypes){
-  let alias  = "Gender";
+module.exports = function (sequelize, dataTypes) {
+  let alias = "Gender";
 
   let cols = {
-    id:{
+    id: {
       type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    genderName:{
+    genderName: {
       type: dataTypes.STRING
     },
 
@@ -15,17 +15,19 @@ module.exports = function (sequelize, dataTypes){
 
   let config = {
     tableName: "gender",
-    timestamps:false
+    timestamps: false
   }
 
   let Gender = sequelize.define(alias, cols, config);
 
-  Gender.associate = function(models) {
+  Gender.associate = function (models) {
     Gender.hasMany(models.Books, {
       as: "products",
-      foreignKey: gender_id
+      foreignKey: "gender_id"
     })
-  
 
+
+
+  }
   return Gender
 }

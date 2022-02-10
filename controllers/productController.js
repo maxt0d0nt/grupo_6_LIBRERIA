@@ -1,12 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const productModel = require('../models/Products')
+//const productModel = require('../models/Products')
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-//const db = require ("../database/models");
+const db = require ("../database/models");
 
 const controller = {
-    //Index page - Show all products
+    //Index page - Show all products 
+    /*db.Books.findAll()
+    .then()*/
     indexPage: (req, res) => {
         res.render('./product/productAll', { products });
     },

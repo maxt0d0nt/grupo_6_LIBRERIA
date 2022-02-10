@@ -11,7 +11,7 @@ module.exports = function (sequelize, dataTypes){
     name:{
       type: dataTypes.STRING
     },
-    price:{
+  /*  price:{
       tpye: dataTypes.FLOAT
 
     },
@@ -23,7 +23,7 @@ module.exports = function (sequelize, dataTypes){
     },
     ecomerceCategory:{
       tpye: dataTypes.STRING
-    }
+    }*/
   }
 
   let config = {
@@ -34,11 +34,22 @@ module.exports = function (sequelize, dataTypes){
   let Books = sequelize.define(alias, cols, config);
 
   Books.associate = function(models) {
-    Books.belongTo(models.gender, {
+    Books.belongsTo(models.Gender, {
       as: "productos",
       through: "product_id",
       foreignKey: "gender_id"
     });
 
-}  return Books;
+    
+      Books.belongsToMany(models.Author, {
+        as: "autor",
+        through: "autor_libro", //es una tabla intermedia
+        foreignKey: "libros_id",
+        otherKey: "author_id",
+        timestamp: false 
+      });
+
+}  
+
+return Books;
 }

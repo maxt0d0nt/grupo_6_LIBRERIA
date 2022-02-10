@@ -1,12 +1,13 @@
 window.addEventListener("load", () => {
-
-    let title = document.querySelector("input #username")
+    
+    let title = document.querySelector("#username")
     title.focus();
+})
 
-    let usuario = document.querySelector("input#username");
-    let contraseña = document.querySelector("input#password");
+/*let usuario = document.querySelector("#username");
+let contraseña = document.querySelector("#password");
 
-    let form = document.querySelector("form");
+   let form = document.querySelector(".form-in");
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -18,17 +19,22 @@ window.addEventListener("load", () => {
             errors.push("este campo debe contener al menos 3 caracteres")
         };
 
-        if (password.value == ""){
+        if (contraseña.value == ""){
             errors.push("contraseña obligatoria")
-        } else if (password.value.length < 3) {
+        } else if (contraseña.value.length < 3) {
             errors.push("este campo debe contener al menos 3 caracteres")
         };
-
-            if (errors.length > 0){
-                
-                let ulErrors = document.querySelector(".error")
-                for (let i=0; i < errors.length; i++){
+        console.log(errors)
+        
+        if (errors.length > 0){
+            console.log("vamos")
+                let ulErrors = document.querySelector(".errors")
+                console.log(ulErrors)
+                    for (let i=0; i <= errors.length; i++){
                     ulErrors.innerHTML += "<li>"+ errors[i] + "</li>"
                 }
+            } else {
+                form.submit()
             };
-        })})
+            
+        })*/

@@ -23,7 +23,7 @@ module.exports = function (sequelize, dataTypes){
   let Author = sequelize.define(alias, cols, config)
 
   Author.associate = function(models){
-    Author.hasMany(models.Product, {
+    Author.hasMany(models.Books, {
       as: "books",
       foreingKey: "author_id"
     })

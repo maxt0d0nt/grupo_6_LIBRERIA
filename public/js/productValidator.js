@@ -29,8 +29,8 @@ window.addEventListener("load", () => {
 
         if (descripcion.value == ""){
         errors.push("Por favor coloque la descripcion del producto")
-        } else if (descripcion.value.length < 5) {
-            errors.push("este campo debe contener al menos 3 caracteres")
+        } else if (descripcion.value.length < 20) {
+            errors.push("este campo debe contener al menos 20 caracteres")
         };
 
       

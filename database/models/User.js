@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes){
-  let alias  = "Author";
+  let alias  = "User";
 
   let cols = {
     id:{
@@ -31,11 +31,11 @@ module.exports = function (sequelize, dataTypes){
   }
 
   let config = {
-    tableName: "author",
+    tableName: "user",
     timestamps:false
   }
 
-  let Author = sequelize.define(alias, cols, config)
+  let User = sequelize.define(alias, cols, config)
 
-  return Author
+  return User
 }

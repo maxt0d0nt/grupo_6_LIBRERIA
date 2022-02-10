@@ -1,18 +1,18 @@
 window.addEventListener("load", () => {
-    
-    let title = document.querySelector("input #name")
+ 
+    let title = document.querySelector("#name")
     title.focus();
-
-    let usuarioNombre = document.querySelector("input#name");
-    let usuarioApellido = document.querySelector("input#lastName");
-    let usuario = document.querySelector("input#username");
-    let mail = document.querySelector("input#email");
-    let fecha = document.querySelector("input#birth");
-    let direccion = document.querySelector("input#address");
-    let contraseña = document.querySelector("input#password");
-    let contraseñaRepetir = document.querySelector("input#passwordRepeat");
-
-    let form = document.querySelector("form");
+})
+   /* let usuarioNombre = document.querySelector("#name");
+    let usuarioApellido = document.querySelector("#lastName");
+    let usuario = document.querySelector("#username");
+    let mail = document.querySelector("#email");
+    let fecha = document.querySelector("#birth");
+    let direccion = document.querySelector("#address");
+    let contraseña = document.querySelector("#password");
+    let contraseñaRepetir = document.querySelector("#passwordRepeat");
+console.log(usuarioNombre)
+    let form = document.querySelector(".form-register");
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -23,10 +23,9 @@ window.addEventListener("load", () => {
             
         } else if (usuarioNombre.value.length < 3) {
             errors.push("este campo debe contener al menos 3 caracteres")
-        }
-        ;
+        };
 
-        if (usuarioApellido.value == ""){
+        /*if (usuarioApellido.value == ""){
             errors.push("el Apellido es obligatorio")
             
         } else if (usuarioApellido.value.length < 3) {
@@ -70,9 +69,13 @@ window.addEventListener("load", () => {
 
             if (errors.length > 0){
                 
-                let ulErrors = document.querySelector(".error")
+                let ulErrors = document.querySelector(".errors")
+                console.log(ulErrors);
                 for (let i=0; i < errors.length; i++){
                     ulErrors.innerHTML += "<li>"+ errors[i] + "</li>"
                 }
+              } else {
+                form.submit()
             };
-        })})
+        })
+        })*/
