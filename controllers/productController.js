@@ -9,7 +9,14 @@ const controller = {
     //Index page - Show all products 
     /*db.Books.findAll()
     .then()*/
-    indexPage: (req, res) => {
+
+    indexPage: async(req, res) => {
+        try {
+            await db.sequelize.authenticate();
+            console.log('Connection has been established successfully.');
+        } catch (error) {
+            console.error('Unable to connect to the database:', error);
+        }
         res.render('./product/productAll', { products });
     },
     //Buy product page
