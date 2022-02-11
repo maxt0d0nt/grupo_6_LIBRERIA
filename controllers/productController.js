@@ -4,7 +4,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require ("../database/models");
-const Op= db.sequelize.Op;
+// const Op= db.sequelize.Op;
 
 const controller = {
     //Index page - Show all products 
@@ -12,12 +12,6 @@ const controller = {
     .then()*/
 
     indexPage: async(req, res) => {
-        try {
-            await db.sequelize.authenticate();
-            console.log('Connection has been established successfully.');
-        } catch (error) {
-            console.error('Unable to connect to the database:', error);
-        }
         res.render('./product/productAll', { products });
     },
     //Buy product page
