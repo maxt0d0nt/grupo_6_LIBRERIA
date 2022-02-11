@@ -1,4 +1,7 @@
-const userModel = require("../models/Users")
+const userModel = require("../models/Users");
+const db= require('../database/models');
+const Op = db.sequelize.Op;
+
 const controller = {
     //Register page
     register: (req, res) => {
@@ -63,5 +66,6 @@ const controller = {
     }
 
     };
+    
 
     module.exports = controller;
