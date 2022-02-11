@@ -30,6 +30,8 @@ app.use(express.static('public'));
 const rutesProduct = require('./routes/product');
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
+const apiProductRouter = require('./routes/api/apiProduct')
+const apiUserRouter = require('./routes/api/apiUser')
 
 //___MAIN___
 app.use('/', mainRouter)
@@ -37,6 +39,10 @@ app.use('/', mainRouter)
 app.use('/product', rutesProduct)
 
 app.use('/user', userRouter)
+
+app.use('/api/product', apiProductRouter)
+
+app.use('/api/user', apiUserRouter)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

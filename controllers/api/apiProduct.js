@@ -1,9 +1,9 @@
-const db = require ("../database/models");
-const Op= db.sequelize.Op;
+const db = require ("../../database/models");
+// const Op= db.sequelize.Op;
 
 module.exports={
     list:(req,res)=>{
-        DB.Books
+        db.Books
             .findAll()
             .then(book=>{
                 return res.status(200).JSON({
@@ -14,7 +14,7 @@ module.exports={
     },
     //Muestra un Libro
     show:(req,res)=>{
-        DB.Books
+        db.Books
             .findByPk(req.params.id)
             .then(book=>{
                 return res.status(200).JSON({
