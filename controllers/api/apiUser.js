@@ -7,7 +7,7 @@ module.exports={
         db.User
             .findAll()
             .then(user=>{
-                return res.status(200).JSON({
+                return res.status(200).json({
                     total:user.length,
                     Data: user,
                 })
