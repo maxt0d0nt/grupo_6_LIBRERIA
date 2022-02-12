@@ -9,6 +9,7 @@ const Literature = require("../databaseC/models/Literature");
 const Ecommerce = require("../databaseC/models/Ecommerce");
 const Author = require("../databaseC/models/Author");
 
+
 const getBooksMapped = async() => {
     const result = await Book.findAll({
         include:[{
@@ -51,6 +52,7 @@ const getBooksMapped = async() => {
     return newArrayObj
 }
 
+
 const controller = {
   index: async(req, res) => {
     const products = await getBooksMapped()
@@ -75,6 +77,5 @@ const controller = {
 };
 
 module.exports = controller;
-
 
 

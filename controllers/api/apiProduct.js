@@ -5,6 +5,51 @@ const Ecommerce = require('../../databaseC/models/Ecommerce')
 const Author = require('../../databaseC/models/Author')
 const imgDir = '/img/uploads/products/';
 const fs = require("fs");
+const path = require("path");
+const productsFilePath = path.join(__dirname, '../../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+const MapOneBook = async(id) => {
+    const  result = await Book.findByPk(id,{
+        include:[{
+            model: Literature,
+            as: "literature_category",
+            attributes:["name"]
+        },
+            {
+                model: Ecommerce,
+                as: "ecommerce_category",
+                attributes:["name"]
+            },
+            {
+                model: Author,
+                as: "author",
+                attributes:["name"]
+            },
+        ],
+        raw:true
+    })
+        .then(book=>{
+            return {
+                Data:book,
+            }
+        }).catch(error=> {
+        console.log("error apiProduct show: ",error)
+    })
+    console.log("-> book", result);
+    let mapped = {
+        id:result.Data.id,
+        name:result.Data.name,
+        author: result.Data?.['author.name'],
+        description: result.Data.description,
+        price: result.Data.price,
+        path: result.Data.img,
+        literatureCategory:result.Data?.['literature_category.name'],
+        ecomerceCategory:result.Data?.['ecommerce_category.name']
+    }
+    return mapped
+}
+
 
 module.exports={
     list:(req,res)=>{
@@ -33,6 +78,7 @@ module.exports={
                 })
             })
     },
+
     //Muestra un Libro
     show:(req,res)=>{
         Book.findByPk((req.params.id),{
@@ -62,6 +108,8 @@ module.exports={
                 console.log("error apiProduct show: ",error)
         })
     },
+
+
     create: async(req, res ) =>{
         let [productData, file] = [req.body, req.file]
         console.log("-> productData", productData);
@@ -135,5 +183,16 @@ module.exports={
             // .then(user=>{
             //     res.json(user)
             // })
+    },
+    
+    //devulve un libro y lo muestra desde la base de datos
+    detailInner:async(req,res)=>{
+        const books = await MapOneBook(req.params.id)
+
+        res.render('./product/productDetail',{
+            productSelected: books,
+            productPromotion: products.filter(p => p.ecomerceCategory === 'promotion')
+        })
+
     }
 }

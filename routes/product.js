@@ -22,7 +22,7 @@ router.get('/create', authMiddleware,productController.create);
 router.post('/createProduct', upload.single('image'), productApiController.create);
 
 //page => ProducDetail
-router.get('/detail/:id', productController.detail);
+router.get('/detail/:id', productApiController.detailInner);
 
 //page => Product Cart
 router.get('/cart', authMiddleware,productController.cartPage)
