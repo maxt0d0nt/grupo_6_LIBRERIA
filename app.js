@@ -15,6 +15,7 @@ const Author = require('./databaseC/models/Author')
 const Book = require('./databaseC/models/Book')
 const Ecommerce = require('./databaseC/models/Ecommerce')
 const Literature = require('./databaseC/models/Literature')
+const User = require('./databaseC/models/User')
 const ecomerceCategories = [
     {name: "promotion"},
     {name: "bestSeller"}
@@ -126,6 +127,17 @@ const books = [
         ecommerce_id: 2
     }
 ]
+const users = [
+    {
+        img: "",
+        birthday: "1111-11-11T00:00:00.000Z",
+        hashedPassword: "$2b$12$js/of3NPjDgyu1kY/xH/NujKCKxrW82CjngN9sXYVRt8GowE3Mhjy",
+        name: "root",
+        lastname: "toor",
+        username: "root",
+        email: "root@test.com"
+    }
+]
 
 
 //SETTINGS-------
@@ -153,7 +165,7 @@ const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
 const apiProductRouter = require('./routes/api/apiProduct')
 const apiUserRouter = require('./routes/api/apiUser')
-const User = require("./databaseC/models/User");
+const {DataTypes} = require("sequelize");
 
 //___MAIN___
 app.use('/', mainRouter)
@@ -168,11 +180,12 @@ app.use('/api/user', apiUserRouter)
 
 app.listen(port, () => {
     //conect DB
-    sequelize.authenticate()
-        .then(()=>{
-            console.log("Conexion db class exitosa")})
-        .catch(error=>{
-            console.log("Conexion db fallida", error)})
+    // sequelize.authenticate()
+    //     .then(()=>{
+    //         console.log("Conexion db class exitosa")})
+    //     .catch(error=>{
+    //         console.log("Conexion db fallida", error)})
+
     //create with Models
     sequelize.sync({force:true})
         .then(()=>{
@@ -189,11 +202,11 @@ app.listen(port, () => {
         .then(()=>{
             books.map(e=> Book.create(e))
         })
+        .then(()=>{
+            users.map(e=> User.create(e))
+        })
         .catch(error=>{
             console.log("Conexion db fallida", error)})
-
-
-
 
 
     console.log(`Example app listening at http://localhost:${port}`)
