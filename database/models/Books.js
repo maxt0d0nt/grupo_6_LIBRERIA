@@ -27,7 +27,7 @@ module.exports = function (sequelize, dataTypes){
   }
 
   let config = {
-    tableName: "product",
+    tableName: "products",
     timestamps:false
   }
 
@@ -41,13 +41,13 @@ module.exports = function (sequelize, dataTypes){
     });
 
     
-      Books.belongsToMany(models.Author, {
-        as: "autor",
-        through: "autor_libro", //es una tabla intermedia
-        foreignKey: "libros_id",
-        otherKey: "author_id",
-        timestamp: false 
-      });
+    Books.belongsToMany(models.Author, {
+      as: "author",
+      through: "author_libro", //es una tabla intermedia
+      foreignKey: "libros_id",
+      otherKey: "author_id",
+      timestamp: false
+    });
 
 }  
 
