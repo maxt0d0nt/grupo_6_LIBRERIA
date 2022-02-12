@@ -179,12 +179,6 @@ app.use('/api/product', apiProductRouter)
 app.use('/api/user', apiUserRouter)
 
 app.listen(port, () => {
-    //conect DB
-    // sequelize.authenticate()
-    //     .then(()=>{
-    //         console.log("Conexion db class exitosa")})
-    //     .catch(error=>{
-    //         console.log("Conexion db fallida", error)})
 
     //create with Models
     sequelize.sync({force:true})

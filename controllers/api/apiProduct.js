@@ -9,6 +9,7 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+//devuelve un book, en base al ID del parametro, desde la DB
 const MapOneBook = async(id) => {
     const  result = await Book.findByPk(id,{
         include:[{
@@ -52,6 +53,7 @@ const MapOneBook = async(id) => {
 
 
 module.exports={
+    //response Api JSON -> muestra todos los libros
     list:(req,res)=>{
         Book.findAll({
             include:[{
@@ -79,7 +81,7 @@ module.exports={
             })
     },
 
-    //Muestra un Libro
+    //response Api JSON -> muestra un libro
     show:(req,res)=>{
         Book.findByPk((req.params.id),{
             include:[{
@@ -109,16 +111,13 @@ module.exports={
         })
     },
 
-
+    //()=> creacion de un nuevo producto en base de datos
     create: async(req, res ) =>{
         let [productData, file] = [req.body, req.file]
-        console.log("-> productData", productData);
-        const {name, author, description, literatureCategory, ecomerceCategory} = productData //TODO falta price
-        console.log("-> literatureCategory", literatureCategory);
-        //create a new product add push to products JSON
+        const {name, author, description, literatureCategory, price, ecomerceCategory} = productData //TODO - falta agregar input de price
         const path =  file ? imgDir + file.filename : ''
 
-        //ini---verifica si el Author ya esta en base de datos sino, lo agrega
+        //ini---verifica si el Author ya esta en base de datos sino, lo agrega a la DB
         const authorId = await Author.findAll({
             attributes: ['id'],
             where: {name: author}
@@ -128,7 +127,6 @@ module.exports={
         }).catch(error=>{
             console.log("Error -> ", error)
         })
-        console.log("-> authorId", authorId);
         let newAuthorObj = null
         if (!authorId?.id){
             newAuthorObj = await Author.create({name:author})
@@ -177,15 +175,12 @@ module.exports={
             literature_id: getLiteratureCatNumber(literatureCategory),
             ecommerce_id: ecomerceCategory === "promotion" ? 1 : 2 //Todo harcodeado
         }
-        console.log("-> newProduct", newProduct);
 
-        Book.create(newProduct)
-            // .then(user=>{
-            //     res.json(user)
-            // })
+
+        Book.create(newProduct).then(()=>console.log("-> nuevo producto agregado a la DB", newProduct))
     },
     
-    //devulve un libro y lo muestra desde la base de datos
+    //devulve un libro desde la base de datos y lo muestra en la pagina Product Detail
     detailInner:async(req,res)=>{
         const books = await MapOneBook(req.params.id)
 
