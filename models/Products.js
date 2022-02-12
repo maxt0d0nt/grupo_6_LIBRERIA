@@ -35,6 +35,7 @@ const Products = {
     create: function(productData, file){
         //create a new product add push to products JSON
         const path =  file ? this.imgDir + file.filename : ''
+        console.log("-> path", path);
 
         let allProducts = this.findAll();
 
