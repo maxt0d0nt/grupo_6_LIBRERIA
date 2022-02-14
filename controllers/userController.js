@@ -34,7 +34,9 @@ const controller = {
     },
     //Login() user process
    loginUser: (req, res) => {
+        //TODO conectar base de datos
         let userToLogin = userModel.findUserCampo('userName', req.body.userName)
+       console.log("-> userToLogin", userToLogin);
        if(userToLogin){
            let isOkPassword = userModel.cmopareSync(req.body.password, userToLogin.hashedPassword)
            if(isOkPassword){
@@ -60,6 +62,7 @@ const controller = {
     },
     //Profile page
     profile: (req, res) => {
+        console.log("-> req.session.userLogged", req.session.userLogged);
         return res.render('./user/profile',{
             user: req.session.userLogged
         })

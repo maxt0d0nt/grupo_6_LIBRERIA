@@ -4,7 +4,7 @@
         <div class="menu__icon">Re@dme</div>
         <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="#">Productos</a></li>
+<!--            <li><a href="#">Productos</a></li>-->
             <li><a href="/user/login">Login</a></li>
             <li><a href="/user/register">Register</a></li>
             <% if(locals.userLogged) {%>
@@ -16,7 +16,14 @@
             <input type="search" placeholder="Search here">
             <span class="fa fa-search"></span>
             <% if(locals.userLogged) {%>
-                <a href="/user/login"><img src="<% if(locals.userLogged.img !== ''){%> <%=locals.userLogged.img%> <%}%>" class="menu__avatar"></a>
+                <a href="/user/login">
+                    <% if(locals.userLogged.img.length > 0){%>
+                        <img src=" <%=locals.userLogged.img%> " class="menu__avatar">
+                    <%}else{%>
+                        <div class="menu__avatar noCursor"> </div>
+                    <%}%>
+
+                </a>
                 <div class="menu__avatar_logout-box">
                     <p class="menu__avatar-txt-color">Hi <%= locals.userLogged.name %> <%= locals.userLogged.lastName %></p>
                     <p class="logout"><a href="/user/logout">Logout</a></p>

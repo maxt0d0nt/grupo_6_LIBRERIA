@@ -23,7 +23,19 @@
                 <label for="description">Description:</label>
                 <textarea id="description" name="description"><%= productToEdit.description %> </textarea><br><br>
                 <label for="literatureCategory">Literature Category:</label>
-                <input type="text" id="literatureCategory" name="literatureCategory" value="<%= productToEdit.literatureCategory%>"><br><br>
+                <select id="literatureCategory" name="literatureCategory">
+                    <option <% if(productToEdit.literatureCategory === "N/A"){%> selected <%}%> value="">N/A</option>
+                    <option <% if(productToEdit.literatureCategory === "terror"){%> selected <%}%> value="terror">terror</option>
+                    <option <% if(productToEdit.literatureCategory === "suspenso"){%> selected <%}%> value="suspenso">suspenso</option>
+                    <option <% if(productToEdit.literatureCategory === "biografia"){%> selected <%}%> value="biografia">biografia</option>
+                    <option <% if(productToEdit.literatureCategory === "novela"){%> selected <%}%> value="novela">novela</option>
+                    <option <% if(productToEdit.literatureCategory === "policial"){%> selected <%}%> value="policial">policial</option>
+                    <option <% if(productToEdit.literatureCategory === "ciencia"){%> selected <%}%> value="ciencia">ciencia</option>
+                    <option <% if(productToEdit.literatureCategory === "religion"){%> selected <%}%> value="religion">religion</option>
+                    <option <% if(productToEdit.literatureCategory === "cuentos infantiles"){%> selected <%}%> value="cuentos infantiles">cuentos infantiles</option>
+                    <option <% if(productToEdit.literatureCategory === "programacion"){%> selected <%}%> value="programacion">programacion</option>
+                    <option <% if(productToEdit.literatureCategory === "salud"){%> selected <%}%> value="salud">salud</option>
+                </select><br><br>
 
                 <label for="cars">Ecomerce Category:</label>
                 <select id="ecomerceCategory" name="ecomerceCategory">

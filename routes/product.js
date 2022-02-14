@@ -9,7 +9,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/all', authMiddleware, productController.indexPage);
 
 //page => Edit product
-router.get('/edit/:id', authMiddleware,productController.edit);
+router.get('/edit/:id', authMiddleware,productApiController.edit);
 //() =>  Edit_product()
 router.put('/updateProduct/:id', upload.single('image'), productApiController.update);
 

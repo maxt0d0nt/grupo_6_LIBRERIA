@@ -3,8 +3,10 @@ const {DataTypes} = require("sequelize");
 const userModel = require("../../models/Users");
 const bcrypt = require("bcrypt");
 const imgDir = '/img/uploads/users/';
+const utils = require("../../utils/utils");
 
 module.exports={
+    //JSON => Todos los usuarios
     list:(req,res)=>{
         User
             .findAll()
@@ -15,7 +17,8 @@ module.exports={
                 })
             })
     },
-    //Muestra un Usuario
+
+    //JSON => Muestra un Usuario
     show:(req,res)=>{
         User
             .findByPk(req.params.id)
@@ -25,36 +28,32 @@ module.exports={
                 })
             })
     },
+
+    //JSON => resgitra usuario TODO falta express validator
     registerUser:(req,res)=>{
-        const hassPassword = (password, passwordRepeat) => {
-            const BCRYPT_SALT_ROUNDS = 12;
-            let hashedPass = null
-            let hashedPassword = null
-            if(password === passwordRepeat && password !== ''){
-                return hashedPassword = bcrypt.hashSync(password,BCRYPT_SALT_ROUNDS)
-
-            }else(
-                console.log("Los passwords ingresados no coinciden")
-            )
-        }
-
         const userData = req.body
         const file = req.file
         const {password, passwordRepeat, birth, ...rest} = userData
         const path =  file ? imgDir + file.filename : ''
+        if(utils.checkRepeatPassword(password, passwordRepeat)){
+            const newUser = {
+                img: path,
+                birthday: birth  ,
+                hashedPassword: utils.hashPass(password, passwordRepeat),
+                ...rest,
+            }
+            console.log("-> newUser", newUser);
 
-        const newUser={
-            img: path,
-            birthday: birth  ,
-            hashedPassword: hassPassword(password, passwordRepeat),
-            ...rest,
+            User.create(newUser).then(user=>{
+                res.json(user)
+            })
+        }else{
+            console.log("Error de datos en register form")
+            //TODO return form error express validator
         }
-        console.log("-> newUser", newUser);
-
-        User.create(newUser).then(user=>{
-            res.json(user)
-        })
     },
+
+    //()=> login user con express validator
     loginUser: async(req, res) => {
         const userDataObj = await User.findAll({
             where: {
@@ -69,9 +68,9 @@ module.exports={
 
         console.log("-> userDataObj", userDataObj);
 
-        let userToLogin = userDataObj?.username
-        if(userToLogin){
-            let isOkPassword = userModel.cmopareSync(req.body.password, userDataObj?.hashedPassword)
+        let userToLogin = userDataObj
+        if(userToLogin?.username){
+            let isOkPassword = userModel.cmopareSync(req.body.password, userToLogin?.hashedPassword)
             if(isOkPassword){
                 req.session.userLogged = userToLogin
                 delete userToLogin.hashedPassword
