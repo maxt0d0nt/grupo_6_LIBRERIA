@@ -12,24 +12,24 @@
                     <form action="/user/createUser" method="POST" enctype="multipart/form-data">
                         <h4>Registro de Usuario</h4>
 
-                        <input required class="datos _w100" type="text" id="name" name="name" placeholder="Ingrese su Nombre">
+                        <input class="datos _w100" type="text" id="name" name="name" placeholder="Ingrese su Nombre">
 
                         <input class="datos _w100" type="text" id="lastname" name="lastname" placeholder="Ingrese su Apellido">
 
-                        <input required class="datos _w100" type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario">
+                        <input class="datos _w100" type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario">
                         <% if(locals.errors && errors.email) {%>
                             <div class="text-danger"><%= errors.email.msg %>!</div>
                         <% } %>
-                        <input required class="datos _w100" type="email" id="email" name="email"
+                        <input class="datos _w100" type="email" id="email" name="email"
                         placeholder="Ingrese su correo electronico">
 
-                        <input  required class="datos _w100" type="date" id="birth" name="birth">
+                        <input class="datos _w100" type="date" id="birth" name="birth">
 
                         <input  class="datos _w100" type="text" id="address" name="address" placeholder="ingrese su direccion">
 
-                        <input required class="datos _w100" type="password" id="password" name="password" placeholder="ingrese contraseña">
+                        <input  class="datos _w100" type="password" id="password" name="password" placeholder="ingrese contraseña">
 
-                        <input required class="datos _w100" type="password" id="passwordRepeat" name="passwordRepeat" placeholder="confirme su contraseña">
+                        <input class="datos _w100" type="password" id="passwordRepeat" name="passwordRepeat" placeholder="confirme su contraseña">
 
                         <input type="file" name="image" id="file"/><br><br>
 
