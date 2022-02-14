@@ -9,20 +9,20 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/all', authMiddleware, productController.indexPage);
 
 //page => Edit product
-router.get('/edit/:id', authMiddleware,productApiController.edit);
+router.get('/edit/:id', authMiddleware,productController.editPage);
 //() =>  Edit_product()
-router.put('/updateProduct/:id', upload.single('image'), productApiController.update);
+router.put('/updateProduct/:id', upload.single('image'), productController.update);
 
 //() => Delete product
 router.delete('/:id', productController.destroy);
 
 //page => Create product
-router.get('/create', authMiddleware,productController.create);
+router.get('/create', authMiddleware,productController.createPage);
 //() => Create_product()
-router.post('/createProduct', upload.single('image'), productApiController.create);
+router.post('/createProduct', upload.single('image'), productController.create);
 
 //page => ProducDetail
-router.get('/detail/:id', productApiController.detailInner);
+router.get('/detail/:id', productController.detailPage);
 
 //page => Product Cart
 router.get('/cart', authMiddleware,productController.cartPage)
