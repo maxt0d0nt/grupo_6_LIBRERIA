@@ -111,6 +111,32 @@ module.exports={
         })
     },
 
+    // checkIfAuthorExist:(author)=>{
+    //     const authorId = await Author.findAll({
+    //         attributes: ['id'],
+    //         where: {name: author}
+    //     }).then(data=>{
+    //         console.log(data?.[0]?.dataValues)
+    //         return data?.[0]?.dataValues
+    //     }).catch(error=>{
+    //         console.log("Error -> ", error)
+    //     })
+    //     let newAuthorObj = null
+    //     if (!authorId?.id){
+    //         newAuthorObj = await Author.create({name:author})
+    //             .then(data=>{
+    //                 console.log("ID de Autor Creado", data?.dataValues)
+    //                 return data?.dataValues
+    //             }).catch(error=>{
+    //                 console.log("Error -> ", error)
+    //             })
+    //     }else{
+    //         return authorId
+    //     }
+    //
+    //     return newAuthorObj
+    // },
+
     //()=> creacion de un nuevo producto en base de datos
     create: async(req, res ) =>{
         let [productData, file] = [req.body, req.file]
@@ -140,35 +166,35 @@ module.exports={
         //end---verifica si el Author ya esta en base de datos sino, lo agrega
 
         const getLiteratureCatNumber = (categoryString) => {
-            let categoryNumber = null
+            let categoryNumber = 1
             switch (categoryString) {
                 case "N/A":
                     return categoryNumber
-                case "terror":
-                    return categoryNumber = 1
-                case "suspenso":
-                    return categoryNumber = 2
-                case "biografia":
-                    return categoryNumber = 3
-                case "novela":
-                    return categoryNumber = 4
                 case "policial":
-                    return categoryNumber = 5
+                    return categoryNumber = 2
+                case "terror":
+                    return categoryNumber = 3
+                case "suspenso":
+                    return categoryNumber = 4
                 case "ciencia":
-                    return categoryNumber = 6
+                    return categoryNumber = 5
                 case "religion":
-                    return categoryNumber = 7
+                    return categoryNumber = 6
                 case "cuentos infantiles":
-                    return categoryNumber = 8
+                    return categoryNumber = 7
                 case "programacion":
-                    return categoryNumber = 9
+                    return categoryNumber = 8
                 case "salud":
+                    return categoryNumber = 9
+                case "biografia":
                     return categoryNumber = 10
+                case "novela":
+                    return categoryNumber = 11
             }
         }
         let newProduct={
             name,
-            author_id: newAuthorObj ? newAuthorObj.id : null,
+            author_id: authorId ? authorId : newAuthorObj.id,
             img: path,
             description,
             price,
@@ -189,5 +215,88 @@ module.exports={
             productPromotion: products.filter(p => p.ecomerceCategory === 'promotion')
         })
 
+    },
+
+    //()=> edit
+    update: async(req, res)=>{
+        const id = parseInt(req.params.id)
+        const bookData = req.body
+        const {name, price, author,description, ecomerceCategory, literatureCategory} = bookData
+        const file  = req.file
+        const pathImg =  file ? imgDir + file.filename : '' //devolver el mismo path anterior de la DB
+
+        const bookInstance = await Book.findByPk(id)
+
+
+        //ini---verifica si el Author ya esta en base de datos sino, lo agrega a la DB
+        const authorId = await Author.findAll({
+            attributes: ['id'],
+            where: {name: author}
+        }).then(data=>{
+            console.log(data?.[0]?.dataValues)
+            return data?.[0]?.dataValues
+        }).catch(error=>{
+            console.log("Error -> ", error)
+        })
+        let newAuthorObj = null
+        console.log("-> authorId IF", !authorId?.id);
+        if (!authorId?.id){
+            newAuthorObj = await Author.create({name:author})
+                .then(data=>{
+                    console.log("ID de Autor Creado", data?.dataValues)
+                    return data?.dataValues
+                }).catch(error=>{
+                    console.log("Error -> ", error)
+                })
+        }
+        //end---verifica si el Author ya esta en base de datos sino, lo agrega
+        const getLiteratureCatNumber = (categoryString) => {
+            let categoryNumber = 1
+            switch (categoryString) {
+                case "N/A":
+                    return categoryNumber
+                case "policial":
+                    return categoryNumber = 2
+                case "terror":
+                    return categoryNumber = 3
+                case "suspenso":
+                    return categoryNumber = 4
+                case "ciencia":
+                    return categoryNumber = 5
+                case "religion":
+                    return categoryNumber = 6
+                case "cuentos infantiles":
+                    return categoryNumber = 7
+                case "programacion":
+                    return categoryNumber = 8
+                case "salud":
+                    return categoryNumber = 9
+                case "biografia":
+                    return categoryNumber = 10
+                case "novela":
+                    return categoryNumber = 11
+            }
+        }
+
+        console.log("-> newAuthorObj", newAuthorObj);
+
+        let updatedBook = {
+            name,
+            price:parseInt(price),
+            description,
+            literature_id: getLiteratureCatNumber(literatureCategory),
+            ecommerce_id: ecomerceCategory === "promotion" ? 1 : 2,
+            author_id: authorId?.id !== undefined ? authorId?.id : newAuthorObj?.id,
+        }
+
+        if(pathImg){
+            updatedBook = Object.assign(updatedBook, {img:pathImg})
+        }
+
+        bookInstance.update(updatedBook)
+
+        await bookInstance.save();
+
+        res.redirect('/product/all')
     }
 }

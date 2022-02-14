@@ -11,7 +11,7 @@ router.get('/all', authMiddleware, productController.indexPage);
 //page => Edit product
 router.get('/edit/:id', authMiddleware,productController.edit);
 //() =>  Edit_product()
-router.put('/updateProduct/:id', upload.single('image'), productController.update);
+router.put('/updateProduct/:id', upload.single('image'), productApiController.update);
 
 //() => Delete product
 router.delete('/:id', productController.destroy);
