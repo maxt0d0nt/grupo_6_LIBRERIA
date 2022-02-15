@@ -2,10 +2,11 @@ window.addEventListener("load", () => {
     
     let title = document.querySelector("#username")
     title.focus();
-})
 
-/*let usuario = document.querySelector("#username");
+
+let usuario = document.querySelector("#username");
 let contraseña = document.querySelector("#password");
+let error = document.getElementById("error");
 
    let form = document.querySelector(".form-in");
 
@@ -27,14 +28,11 @@ let contraseña = document.querySelector("#password");
         console.log(errors)
         
         if (errors.length > 0){
-            console.log("vamos")
-                let ulErrors = document.querySelector(".errors")
-                console.log(ulErrors)
-                    for (let i=0; i <= errors.length; i++){
-                    ulErrors.innerHTML += "<li>"+ errors[i] + "</li>"
-                }
-            } else {
-                form.submit()
-            };
-            
-        })*/
+                
+            let ulErrors = document.querySelector("error")  
+                error.innerHTML = errors.join(', ');
+    } else {
+        form.submit()
+    };
+        })
+    })

@@ -11,7 +11,14 @@
     font-style: italic;
 }
 
+
 @media (max-width: 2600px) and (orientation: landscape) {
+
+	#error {
+		font-weight: 700;
+		font-size: x-large;
+		color: black;
+		background-color: #760000;}
 
 
 input[type="submit"]{
@@ -133,5 +140,11 @@ a:link {
   input[type="submit"]:hover{
 	cursor:pointer;
   }
+
+  #error {
+	font-weight: 700;
+	font-size: x-large;
+	color: black;
+	background-color: #760000;}
 
   }
