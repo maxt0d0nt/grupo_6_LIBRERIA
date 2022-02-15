@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head',{cssStyle:'/css/pages/register.css'}) %>
    
@@ -35,6 +35,89 @@
 
                         <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
                         <input class="_w100" type="submit" id="enviar">
+                    </form>
+                        
+
+        </main>
+    </div>
+    
+</body>
+<script src="/js/registerValidator.js"></script>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head',{cssStyle:'/css/pages/register.css'}) %>
+   
+<body>
+
+    <div class="container-form">
+        <%- include('../partials/menu') %>
+
+        <div class="div.errores">
+            <div class="errores">
+                <ul>
+        
+                </ul>
+            </div>
+        </div>
+
+
+        <main class="form-register">
+
+                    
+                    
+
+
+                    <h4>Registro de Usuario</h4>
+                    
+
+                    <form action="/user/createUser" method="post" class="reservation">
+                        <p>
+                            <label></label>
+                            <input type="text" name="usuario" class="usuario" placeholder="Ingrese su Nombre">
+                            <!-- required PARA VALIDAR POR HTML --> 
+                        </p>
+                        <p>
+                            <label></label>
+                            <input type="" name="" class="email" placeholder="Ingrese su Apellido">
+                        </p>
+                        <p>
+                            <label> </label>
+                            <input type="text" name="apellidos" class="apellidos" placeholder="Ingrese su nombre de usuario">
+                        </p>
+                        <p>
+                            <label> </label>
+                            <input type="text" name="descripcion" class="descripcion" placeholder="Ingrese su correo electronico">
+                        </p>
+                        <p>
+                            <label></label>
+                            <input type="date" name="fecha">
+                        </p>
+                
+                        
+                        <p>
+                            <label></label>
+                            <input type="text" name="nivel" class="nivel" placeholder="Ingrese su direccion">
+                        </p>
+                        <p>
+                            <label></label>
+                            <input type="text" name="domicilio" class="domicilio" placeholder="Ingrese su contraseña">
+                        </p>
+                        <p>
+                            <label></label>
+                            <input type="text" name="experiencia" class="experiencia" placeholder="Confirme su contraseña">
+                        </p>
+                        <p>
+                            <input type="file" class="form-control"   name="avatar"  placeholder="Debes eligir tu avatar...">
+                        </p>
+                        <p>
+                            <button type="submit">Enviar</button>
+                        </p>
+                        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+                
+                        
                     </form>
                         
 
