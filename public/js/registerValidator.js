@@ -16,18 +16,16 @@ const updateInput = (value, id) => {
     console.log("-> id", id);
     console.log("-> formData", formData);
 
-    //Aquí enviamos los errores al usuario
-    let ulErrores = document.getElementById('errores');
-    ulErrores.classList.add('alert-danger')
-    if(errores.length > 0){
-        ulErrores.innerHTML = "";
-        for (let i = 0 ; i < errores.length; i++){
-            ulErrores.innerHTML += `<li> ${errores[i]} </li> `
-        }
-        let errores = [];
-    }else{
-        return true;
+
+    switch (id) {
+        case'name':
+            //validacion
+            //condicional error
+        case 'lastname':
+            //validacion
+
     }
+
 }
 
 
