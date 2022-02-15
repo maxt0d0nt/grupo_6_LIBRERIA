@@ -2,12 +2,14 @@ window.addEventListener("load", () => {
     
     let title = document.querySelector("#username")
     title.focus();
-})
 
-/*let usuario = document.querySelector("#username");
+
+let usuario = document.querySelector("#username");
 let contraseña = document.querySelector("#password");
+let error = document.getElementById("error");
 
-   let form = document.querySelector(".form-in");
+   let form = document.querySelector(".formbody");
+    console.log(form);
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -20,21 +22,19 @@ let contraseña = document.querySelector("#password");
         };
 
         if (contraseña.value == ""){
-            errors.push("contraseña obligatoria")
+            errors.push("La contraseña es obligatoria")
         } else if (contraseña.value.length < 3) {
             errors.push("este campo debe contener al menos 3 caracteres")
         };
         console.log(errors)
         
         if (errors.length > 0){
-            console.log("vamos")
-                let ulErrors = document.querySelector(".errors")
-                console.log(ulErrors)
-                    for (let i=0; i <= errors.length; i++){
-                    ulErrors.innerHTML += "<li>"+ errors[i] + "</li>"
-                }
-            } else {
-                form.submit()
-            };
-            
-        })*/
+                
+            let ulErrors = document.querySelector("error")  
+                error.innerHTML = errors.join("</br>");
+    } else {
+        console.log(form.submit())
+
+    };
+        })
+    })

@@ -8,36 +8,40 @@
         <%- include('../partials/menu') %>
 
         <main class="form-register">
+                    <div id="errores">
 
-                    <form action="/user/createUser" method="POST" enctype="multipart/form-data">
+                    </div>
+
+                    <form onsubmit="" action="/user/createUser" class="formulario" method="POST" enctype="multipart/form-data">
                         <h4>Registro de Usuario</h4>
 
-                        <input class="datos _w100" type="text" id="name" name="name" placeholder="Ingrese su Nombre">
+                        <input class="datos _w100" type="text" id="name" name="name" onchange="updateInput(this.value, this.id)" placeholder="Ingrese su Nombre">
 
-                        <input class="datos _w100" type="text" id="lastname" name="lastname" placeholder="Ingrese su Apellido">
+                        <input class="datos _w100" type="text" id="lastname" name="lastname"  onchange="updateInput(this.value, this.id)" placeholder="Ingrese su Apellido">
 
-                        <input class="datos _w100" type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario">
+                        <input class="datos _w100" type="text" id="username" name="username"  onchange="updateInput(this.value, this.id)" placeholder="Ingrese su nombre de usuario">
                         <% if(locals.errors && errors.email) {%>
                             <div class="text-danger"><%= errors.email.msg %>!</div>
                         <% } %>
-                        <input class="datos _w100" type="email" id="email" name="email"
-                        placeholder="Ingrese su correo electronico">
+                        <input class="datos _w100" type="email" id="email"  name="email"
+                         onchange="updateInput(this.value, this.id)" placeholder="Ingrese su correo electronico">
 
-                        <input class="datos _w100" type="date" id="birth" name="birth">
+                        <input class="datos _w100" type="date" id="birth"  onchange="updateInput(this.value, this.id)" name="birth">
 
-                        <input  class="datos _w100" type="text" id="address" name="address" placeholder="ingrese su direccion">
+                        <input  class="datos _w100" type="text" id="address" name="address"  onchange="updateInput(this.value, this.id)" placeholder="ingrese su direccion">
 
-                        <input  class="datos _w100" type="password" id="password" name="password" placeholder="ingrese contraseña">
+                        <input  class="datos _w100" type="password" id="password" name="password"  onchange="updateInput(this.value, this.id)" placeholder="ingrese contraseña">
 
-                        <input class="datos _w100" type="password" id="passwordRepeat" name="passwordRepeat" placeholder="confirme su contraseña">
+                        <input class="datos _w100" type="password" id="passwordRepeat" name="passwordRepeat"  onchange="updateInput(this.value, this.id)" placeholder="confirme su contraseña">
 
                         <input type="file" name="image" id="file"/><br><br>
 
                         <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
                         <input class="_w100" type="submit" id="enviar">
                     </form>
-                        
-
+                
+                </br>
+                <div id="error"></div>
         </main>
     </div>
     
