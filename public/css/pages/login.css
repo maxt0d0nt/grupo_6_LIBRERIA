@@ -18,7 +18,13 @@
 		font-weight: 700;
 		font-size: x-large;
 		color: black;
-		background-color: #760000;}
+		background-color: #760000;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	  }
 
 
 input[type="submit"]{
@@ -145,6 +151,12 @@ a:link {
 	font-weight: 700;
 	font-size: x-large;
 	color: black;
-	background-color: #760000;}
+	background-color: #760000;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  }
 
   }

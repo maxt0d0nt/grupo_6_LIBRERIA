@@ -7,8 +7,11 @@
         <div class="container">
             <%- include('../partials/menu') %>
 
+        </br>
+        <div id="error"></div>
+
             <main class="form-in">
-                <form action="/user/loginUser" target="" method="POST">
+                <form class="formbody" action="/user/loginUser" target="" method="POST">
 
                       <h4>Ingresar</h4>
 
@@ -22,9 +25,9 @@
                         <% } %>
                       <input class="_w100" type="submit" id="enviar">
                 </form>
-            </br>
-                <div id="error"></div>
+            
             </main>
+            
        </div>
        
            </body>
