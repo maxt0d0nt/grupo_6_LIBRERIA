@@ -46,11 +46,14 @@ module.exports={
 
             User.create(newUser).then(user=>{
                 res.json(user)
-            })
+                            })
+            res.redirect('/user/login');
         }else{
             console.log("Error de datos en register form")
             //TODO return form error express validator
         }
+
+        
     },
 
     //()=> login user con express validator

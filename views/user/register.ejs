@@ -6,13 +6,14 @@
 
     <div class="container">
         <%- include('../partials/menu') %>
-
+  
+        <div id="error"></div>
         <main class="form-register">
                     <div id="errores">
 
                     </div>
 
-                    <form onsubmit="" action="/user/createUser" class="formulario" method="POST" enctype="multipart/form-data">
+                    <form onsubmit="" action="/user/createUser" id="form" class="formulario" method="POST" enctype="multipart/form-data">
                         <h4>Registro de Usuario</h4>
 
                         <input class="datos _w100" type="text" id="name" name="name" onchange="updateInput(this.value, this.id)" placeholder="Ingrese su Nombre">
@@ -39,12 +40,10 @@
                         <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
                         <input class="_w100" type="submit" id="enviar">
                     </form>
-                
-                </br>
-                <div id="error"></div>
+              
         </main>
     </div>
     
 </body>
-<script src="/js/registerValidator.js"></script>
+<script src="/js/validadorRegistro.js"></script>
 </html>
