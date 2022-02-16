@@ -16,13 +16,13 @@ let error = document.getElementById("error");
         let errors =[];
 
         if (usuario.value == ""){
-            errors.push("el nombre es obligatorio")
+            errors.push("El campo INGRESE SU USUARIO es obligatorio")
         } else if (usuario.value.length < 3) {
             errors.push("este campo debe contener al menos 3 caracteres")
         };
 
         if (contraseña.value == ""){
-            errors.push("La contraseña es obligatoria")
+            errors.push("El campo INGRESE SU CONTRASEÑA es obligatoria")
         } else if (contraseña.value.length < 3) {
             errors.push("este campo debe contener al menos 3 caracteres")
         };

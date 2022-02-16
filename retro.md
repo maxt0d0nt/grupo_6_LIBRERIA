@@ -95,3 +95,20 @@
 
 #### Less of:
 * 
+
+        #### Sprint 8
+
+#### Keep doing:
+* 
+
+#### Start doing:
+* 
+
+#### Stop doing:
+* 
+
+#### More of:
+* 
+
+#### Less of:
+* 
