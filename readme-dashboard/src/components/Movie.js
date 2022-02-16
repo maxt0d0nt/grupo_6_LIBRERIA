@@ -11,16 +11,16 @@ class Movies extends Component{
     }
 
     componentDidMount(){
-        fetch('/api/movies')
-        .then(response => {
-            return response.json()
-        })
-        .then(movies =>{
-
-            this.setState({
-                movies: movies.data
-            })
-        })
+        // fetch('/api/movies')
+        // .then(response => {
+        //     return response.json()
+        // })
+        // .then(movies =>{
+        //
+        //     this.setState({
+        //         movies: movies.data
+        //     })
+        // })
     }
 
 	render(){

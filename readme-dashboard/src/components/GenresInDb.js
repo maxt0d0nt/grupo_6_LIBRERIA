@@ -8,16 +8,16 @@ function GenresInDb(){
     
 
     useEffect( () =>{
-        fetch('/api/genres')
-        .then(response => {
-            return response.json()
-        })
-        .then(generos =>{
-            //console.log(generos.data);
-            setListGenres(generos.data)
-            
-        })
-        .catch(error => console.log(error))
+        // fetch('/api/genres')
+        // .then(response => {
+        //     return response.json()
+        // })
+        // .then(generos =>{
+        //     //console.log(generos.data);
+        //     setListGenres(generos.data)
+        //
+        // })
+        // .catch(error => console.log(error))
     },[])
 
 
