@@ -39,9 +39,8 @@ input[type="submit"]{
 	border:1px solid #000;
 	border-radius:5px;
 	display:block;
-	color:#000;
-	background-color:#eb3349;;
-	box-shadow: 7px 13px 37px #000;
+	color: white;
+	background-color:#992735;
 	font-weight: 700;
 } 
 
@@ -51,7 +50,7 @@ input[type="submit"]:hover{
 
 .form-in {
 	width: 400px;
-    background: linear-gradient(to bottom, var(--first-color), var(--last-color));
+	background: linear-gradient(to bottom, var(--first-color), #f45c43c7);
 	padding: 30px;
 	margin: auto;
 	margin-top: 100px;
@@ -65,6 +64,8 @@ input[type="submit"]:hover{
 	text-align: center;
 	font-weight: 600;
 	margin-bottom: 10px;
+	color: white;
+	margin-bottom: 50px;
 }
 
 .datos{

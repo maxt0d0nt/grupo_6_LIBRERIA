@@ -2,6 +2,11 @@
 @import "/css/rootStyles.css";
 @import "/css/layout/homeMenu.css";
 
+body{
+	background: url("../../img/books.jpg");
+	background-size: cover;
+	background-position: center center;
+}
 
 .text-danger {
     color: #ffffff;
@@ -36,6 +41,7 @@ input[type="submit"]:hover{
 	border-radius: 5px;
 	text-align: justify;
 	box-shadow: 0px 0px 6px #eb0d0d;
+	margin-bottom: 100px;
 }
 .form-register h4{
 	font-size: 30px;
