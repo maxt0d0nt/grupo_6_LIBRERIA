@@ -34,7 +34,7 @@ input[type="submit"]:hover{
 
 .form-register {
 	width: 400px;
-	background: linear-gradient(to bottom, var(--first-color), var(--last-color));
+	background: linear-gradient(to bottom, #eb3349de, #f45c43d6);
 	padding: 30px;
 	margin: auto;
 	margin-top: 100px;
