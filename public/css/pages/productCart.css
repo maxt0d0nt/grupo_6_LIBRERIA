@@ -77,11 +77,11 @@ button {
     align-self: flex-end;
     height: 40px;
     width: 102px;
-    background: red;
-    border: 2px solid rgb(199 34 34);
+    background: #c12e2e;
+    border: 2px solid #c12e2e;
     border-radius: 8px;
-    box-shadow: 1px 1px 3px #ff0000;
     margin-top: 37px;
+    color: white;
 }
 
 button[type="submit"]:hover{
