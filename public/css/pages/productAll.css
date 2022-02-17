@@ -68,7 +68,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    color: black;
+    color: black;padding-bottom: 50px;
 }
 
 .card__title {
